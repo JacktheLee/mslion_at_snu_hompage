@@ -13,3 +13,7 @@
  *= require_tree .
  *= require_self
  */
+
+.snu_color {
+  background-color: rgb(0, 57, 127);
+}
