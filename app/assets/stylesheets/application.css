@@ -33,3 +33,24 @@ html {
 .btn:hover, .btn-large:hover {
   background-color: rgb(33, 97, 175) !important;
 }
+
+.introduction_row i {
+  font-size: 10rem;
+}
+
+.introduction_row p {
+  font-size: 1.4rem;
+}
+
+.introduction_row div {
+  height: 20rem;
+  -webkit-transition: background 0.2s linear;
+  -moz-transition: background 0.2s linear;
+  -ms-transition: background 0.2s linear;
+  -o-transition: background 0.2s linear;
+  transition: background 0.2s linear;
+}
+
+.introduction_row div:hover {
+  background-color: rgb(66, 66, 66);;
+}
