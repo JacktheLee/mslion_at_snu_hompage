@@ -18,6 +18,11 @@ html {
   color: white;
 }
 
+body {
+  background-color: black;
+  color: white;
+}
+
 .snu_color {
   background-color: rgb(0, 57, 127);
 }
