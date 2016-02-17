@@ -13,12 +13,23 @@
 #introduction {
   padding-top: 4rem;
 }
+
 #history {
   padding-top: 4rem;
 }
+
+#schedule {
+  padding-top: 4rem;
+}
+
 #member {
   padding-top: 4rem;
 }
+
+#apply {
+  padding-top: 4rem;
+}
+
 #footer {
   padding-top: 4rem;
   text-align: center;
@@ -76,6 +87,12 @@ a:link, a:visited, a:hover, a:active {
 
 #title2 {
   margin-top: 10rem;
+}
+
+.schedule_image {
+  width: inherit;
+  max-width: 100%;
+  height: auto;
 }
 
 .admin_image {
