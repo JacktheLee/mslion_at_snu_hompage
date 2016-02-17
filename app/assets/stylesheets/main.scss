@@ -9,3 +9,87 @@
 .carousel-control.left {
   background-image: linear-gradient(to left,rgba(0,0,0,.0001) 0,rgba(0,0,0,.1) 100%);
 }
+
+#introduction {
+  padding-top: 4rem;
+}
+#history {
+  padding-top: 4rem;
+}
+#member {
+  padding-top: 4rem;
+}
+#footer {
+  padding-top: 4rem;
+  text-align: center;
+  height: 200px;
+  color: #606060;
+}
+
+.title {
+  font-size: 5vw;
+  margin: 5px 0 -10px 0;
+  text-align: center;
+}
+
+.chapter-title {
+  font-size: 4vw;
+}
+
+.description {
+  color: white;
+  font-size: 3.5vw;
+}
+
+.center {
+  margin-top: 5rem;
+  .logo {
+    color: #fff;
+    text-decoration: none; 
+    h2 {
+      font-size: auto;
+    }
+    .logo_image {
+      width: inherit;
+      max-width: 70%;
+      height: auto;
+    }
+  }
+}
+
+a:link, a:visited, a:hover, a:active {
+ color: #fff;
+ text-decoration: none;
+}
+
+.introduction-first {
+  background-image: url('blacklion.jpg');
+  background-repeat: no-repeat;
+  background-size: 65%;
+  height: 40vw;
+  background-position: right bottom;
+}
+
+.introduction-second {
+  margin-top: 3rem;
+}
+
+#title2 {
+  margin-top: 10rem;
+}
+
+.admin_image {
+  width: inherit;
+  max-width: 100%;
+  height: auto;
+}
+
+.apply-link {
+  text-align: center;
+}
+
+.facebook_logo {
+  margin-bottom: 10px;
+  height: 30px;
+  margin-left: -12px;
+}

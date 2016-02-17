@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>멋사 at SNU</title>
+  <title>멋쟁이 사자처럼 at SNU</title>
   
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
   
@@ -17,15 +17,15 @@
 </head>
 <body>
 
-<div class="navbar-fixed">
+<div id="top" class="navbar-fixed">
   <nav class="snu_color">
     <div class="nav-wrapper container">
-      <a href="#!" class="brand-logo"><img src="<%= asset_path('hlogo.png') %>" style="height: 64px;"></a>
+      <a href="#top"><img class="brand-logo" src="<%= asset_path('hlogo_white_2.png') %>"></a>
       <ul class="right hide-on-med-and-down">
-        <li><a href="#top">Top</a></li>
         <li><a href="#introduction">소개</a></li>
         <li><a href="#history">한 일들</a></li>
         <li><a href="#member">구성원</a></li>
+        <li><a href="#apply">지원하기</a></li>
       </ul>
     </div>
   </nav>
@@ -37,3 +37,19 @@
 
 </body>
 </html>
+
+<script>
+  $(document).ready(function() {
+    //caches a jQuery object containing the header element
+    var header = $('.snu_color');
+    $(window).scroll(function() {
+      var scroll = $(window).scrollTop();
+  
+      if (scroll >= 50) {
+        header.css('background-color', 'transparent');
+      } else {
+        header.css('background-color', 'rgba(30, 30, 30, .8)');
+      }
+    });
+  });
+</script>
