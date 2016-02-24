@@ -84,6 +84,14 @@
   </div>
 </div>
 
+<div id="history">
+  <p class="chapter-title">만든 서비스</p>
+  <hr>
+  <div style="text-align: center;" id="danspot">
+    <img class="survice_image" src="<%= asset_path('Danspot.png') %>">
+  </div>
+</div>
+
 <div id="schedule">
   <p class="chapter-title">주요일정</p>
   <hr>
@@ -114,6 +122,9 @@
 
 <script>
   $(document).ready(function() {
+    $('#danspot').mouseenter(function(){
+      
+    });
     $('.center a').click(function() {
       if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
         var target = $(this.hash);

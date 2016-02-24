@@ -4,7 +4,6 @@
   <title>멋쟁이 사자처럼 at SNU</title>
   
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-  
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/css/materialize.min.css">
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
@@ -14,18 +13,7 @@
   
   <%= csrf_meta_tags %>
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <style>
-    @font-family{
-      font-family:'Godo';
-       font-style:normal;
-       font-weight:400;
-       src: url('//cdn.jsdelivr.net/korean-webfonts/1/corps/godo/Godo/GodoM.woff2') format('woff2'),
-        url('//cdn.jsdelivr.net/korean-webfonts/1/corps/godo/Godo/GodoM.woff') format('woff');
-    }
-    body{
-      font-family:'Godo', serif;
-    }
-  </style>
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no" />
 </head>
 <body>
 
@@ -48,8 +36,8 @@
   <div class="container-fluid">
     <div class="row">
       <a href="#introduction" class="logo_t">
-        <p class="title">멋쟁이 사자처럼 at SNU</p>
-        <img class="logo_image" src="<%= asset_path('clogo_white.png') %>">
+        <p class="title">멋쟁이 사자처럼 at SNU</p> <br>
+        <img class="logo_image" src="<%= asset_path('clogo_white.png') %>"><br><br><br>
       </a>
     </div>
   </div>
@@ -57,23 +45,11 @@
 </header>
 <div class="container">
   <%= yield %>
-</div> 
+</div>
 
 </body>
 </html>
 
 <script>
-  $(document).ready(function() {
-    //caches a jQuery object containing the header element
-    var header = $('.snu_color');
-    $(window).scroll(function() {
-      var scroll = $(window).scrollTop();
-  
-      if (scroll >= 50) {
-        header.css('background-color', 'transparent');
-      } else {
-        header.css('background-color', 'rgba(30, 30, 30, .8)');
-      }
-    });
-  });
+
 </script>
