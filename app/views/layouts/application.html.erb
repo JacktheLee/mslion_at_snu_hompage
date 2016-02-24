@@ -2,78 +2,51 @@
 <html>
 <head>
   <title>멋쟁이 사자처럼 at SNU</title>
-  
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-  
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/css/materialize.min.css">
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/js/materialize.min.js"></script>
-  
   <%= csrf_meta_tags %>
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <style>
-    @font-family{
-      font-family:'Godo';
-       font-style:normal;
-       font-weight:400;
-       src: url('//cdn.jsdelivr.net/korean-webfonts/1/corps/godo/Godo/GodoM.woff2') format('woff2'),
-        url('//cdn.jsdelivr.net/korean-webfonts/1/corps/godo/Godo/GodoM.woff') format('woff');
-    }
-    body{
-      font-family:'Godo', serif;
-    }
-  </style>
 </head>
-<body>
+<body id="top" class="scrollspy">
 
-<div id="top" class="navbar-fixed">
-  <nav class="snu_color">
-    <div class="nav-wrapper container" style="width:100%;">
-      <a href="#top"><img class="brand-logo" src="<%= asset_path('hlogo_white_2.png') %>"></a>
-      <ul class="right hide-on-med-and-down">
-        <li><a href="#introduction">소개</a></li>
-        <li><a href="#history">한 일들</a></li>
-        <li><a href="#schedule">주요일정</a></li>
-        <li><a href="#member">구성원</a></li>
-        <li><a href="#apply">지원하기</a></li>
-      </ul>
+<!-- Pre Loader -->
+<div id="loader-wrapper">
+  <div id="loader"></div>
+  <div class="loader-section section-left"></div>
+  <div class="loader-section section-right"></div>
+</div>
+
+<!--Navigation-->
+<div class="navbar-fixed">
+  <nav id="nav_f" class="default_color" role="navigation">
+    <div class="container">
+      <div class="nav-wrapper">
+        <a href="#" id="logo-container"><img class="brand-logo" src="<%= asset_path('hlogo_white_2.png') %>"></a>
+        <ul class="right hide-on-med-and-down">
+          <li><a href="#introduction">소개</a></li>
+          <li><a href="#history">한 일들</a></li>
+          <li><a href="#schedule">주요일정</a></li>
+          <li><a href="#member">구성원</a></li>
+          <li><a href="#apply">지원하기</a></li>
+        </ul>
+        <ul id="nav-mobile" class="side-nav">
+          <li><a href="#introduction">소개</a></li>
+          <li><a href="#history">한 일들</a></li>
+          <li><a href="#schedule">주요일정</a></li>
+          <li><a href="#member">구성원</a></li>
+          <li><a href="#apply">지원하기</a></li>
+        </ul>
+        <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
+      </div>
     </div>
   </nav>
 </div>
-<header>
-  <div class="center">
-  <div class="container-fluid">
-    <div class="row">
-      <a href="#introduction" class="logo_t">
-        <p class="title">멋쟁이 사자처럼 at SNU</p>
-        <img class="logo_image" src="<%= asset_path('clogo_white.png') %>">
-      </a>
-    </div>
-  </div>
-</div>
-</header>
-<div class="container">
-  <%= yield %>
-</div> 
+
+<%= yield %>
 
 </body>
 </html>
-
-<script>
-  $(document).ready(function() {
-    //caches a jQuery object containing the header element
-    var header = $('.snu_color');
-    $(window).scroll(function() {
-      var scroll = $(window).scrollTop();
-  
-      if (scroll >= 50) {
-        header.css('background-color', 'transparent');
-      } else {
-        header.css('background-color', 'rgba(30, 30, 30, .8)');
-      }
-    });
-  });
-</script>
