@@ -38,35 +38,20 @@
 }
 
 .title {
-  font-size: 5vw;
+  font-size: 6vw;
   margin: 5px 0 -10px 0;
   text-align: center;
 }
 
 .chapter-title {
-  font-size: 4vw;
+  font-size: 3vw;
 }
 
 .description {
   color: white;
-  font-size: 3.5vw;
+  font-size: 3vw;
 }
 
-.center {
-  margin-top: 5rem;
-  .logo {
-    color: #fff;
-    text-decoration: none; 
-    h2 {
-      font-size: auto;
-    }
-    .logo_image {
-      width: inherit;
-      max-width: 70%;
-      height: auto;
-    }
-  }
-}
 
 a:link, a:visited, a:hover, a:active {
  color: #fff;
@@ -86,13 +71,17 @@ a:link, a:visited, a:hover, a:active {
 }
 
 #title2 {
-  margin-top: 10rem;
+  margin-top: 12rem;
+  font-size: 4vw;
+  text-align: center;
 }
 
 .schedule_image {
+  background-color: white;
   width: inherit;
   max-width: 100%;
   height: auto;
+  text-align: cetner;
 }
 
 .admin_image {
@@ -103,6 +92,7 @@ a:link, a:visited, a:hover, a:active {
 
 .apply-link {
   text-align: center;
+  font-size: 3vw;
 }
 
 .facebook_logo {
