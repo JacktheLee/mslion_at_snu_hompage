@@ -45,49 +45,106 @@
   </div>
 </div>
 
-<!--Work-->
-<div class="section scrollspy" id="work">
+<div class="section scrollspy" id="history">
   <div class="container">
     <h2 class="header text_b">한일들 </h2>
     <div class="row">
-      <!--
-      <div class="col s12 m4 l4">
-        <div class="card">
-          <div class="card-image waves-effect waves-block waves-light">
-            <img class="activator" src="img/project1.jpg">
-          </div>
-          <div class="card-content">
-            <span class="card-title activator grey-text text-darken-4">Project Title <i class="mdi-navigation-more-vert right"></i></span>
-            <p><a href="#">Project link</a></p>
-          </div>
-          <div class="card-reveal">
-            <span class="card-title grey-text text-darken-4">Project Title <i class="mdi-navigation-close right"></i></span>
-            <p>Here is some more information about this project that is only revealed once clicked on.</p>
-          </div>
-        </div>
+      <div class="slider">
+        <ul class="slides">
+          <% [1,2,3,4,10].each do |item| %>
+            <li>
+              <img src="<%= asset_path('history'+item.to_s+'.png') %>">
+            </li>
+          <% end  %>
+        </ul>
       </div>
-      -->
     </div>
   </div>
 </div>
 
-<!--Parallax-->
-<div class="parallax-container">
-  <div class="parallax"><img src="<%= asset_path('main_background_image.jpg') %>"></div>
+<div class="section scrollspy" id="work">
+  <div class="container">
+    <h2 class="header text_b">만든 서비스 </h2>
+    <div class="row" style="margin: 3rem 0;">
+      <div class="col s12 l6" style="margin: 1rem 0;">
+        <a href="http://www.danspot.kr" target="_blank" class="portfolio-box center">
+          <img src="<%= asset_path('danspot.png') %>" class="responsive-img center" alt="" style="max-height: 15rem;">
+          <div class="portfolio-box-caption">
+            <div class="portfolio-box-caption-content">
+              <div class="project-category text-faded">
+                스트릿 댄스 레슨 및 학원 모음 사이트
+              </div>
+              <div class="project-name">
+                댄스팟
+              </div>
+              <span></span>
+            </div>
+          </div>
+        </a>
+      </div>
+      <div class="col s12 l6" style="margin: 1rem 0;">
+        <a href="https://play.google.com/store/apps/details?id=com.handsome.cotable.notibook" target="_blank" class="portfolio-box center">
+          <img src="<%= asset_path('notibook.png') %>" class="responsive-img center" alt="" style="max-height: 15rem;">
+          <div class="portfolio-box-caption">
+            <div class="portfolio-box-caption-content">
+              <div class="project-category text-faded">
+                서울대생을 위한 공지 알람이
+              </div>
+              <div class="project-name">
+                노티북
+              </div>
+              <span></span>
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
 </div>
 
-<!--Team-->
-<div class="section scrollspy" id="team">
+<div class="section scrollspy" id="schedule">
   <div class="container">
-    <h2 class="header text_b"> 구성원 </h2>
+    <h2 class="header text_b">주요 일정 </h2>
     <div class="row">
-      dd
+      <div class="col s12">
+        <img class="responsive-img" src="<%= asset_path('schedule4.png') %>">
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="section scrollspy" id="member">
+  <div class="container">
+    <h2 class="header text_b">구성원 </h2>
+    <div class="row">
+      <div class="col s12">
+        <img class="responsive-img" src="<%= asset_path('admin_image.png') %>">
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="section scrollspy" id="apply">
+  <div class="container">
+    <h2 class="header text_b">지원하기 </h2>
+    <div class="row">
+      <div class="col s12 center" style="margin-bottom: 2rem;">
+        <p class="black-text snu_text">3월 2일(수)~3월 11일(금)23시59분</p>
+        <div class="carousel">
+          <a class="carousel-item" href="#one!"><img src="<%= asset_path('2.png') %>"></a>
+          <a class="carousel-item" href="#two!"><img src="<%= asset_path('3.jpg') %>"></a>
+          <a class="carousel-item" href="#three!"><img src="<%= asset_path('4.png') %>"></a>
+          <a class="carousel-item" href="#four!"><img src="<%= asset_path('5.png') %>"></a>
+        </div>
+        <%= link_to "지원하기", "http://likelion.net", class: "apply_btn" %>
+      </div>
     </div>
   </div>
 </div>
 
 <script>
 $(document).ready(function(){
-    $('.parallax').parallax();
+    $('.slider').slider({full_width: true});
+    $('.carousel').carousel();
 });
 </script>

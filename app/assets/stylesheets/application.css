@@ -19,13 +19,15 @@ html {
   color: white;
 }
 
-body {
-  background-color: black;
-  color: white;
+@font-face {
+    font-family: 'GODOM';
+    src: url('/fonts/GODOM.ttf');
 }
 
-.snu_color {
-  background-color: rgb(24, 24, 24);
+body {
+  font-family:"GODOM",serif;
+  background-color: black;
+  color: white;
 }
 
 .brand-logo {
@@ -35,10 +37,6 @@ body {
   position: absolute;
   top: 10px;
   left: 0;
-}
-
-.snu_color_text {
-  color: rgb(0, 57, 127);
 }
 
 .btn, .btn-large{
@@ -70,9 +68,6 @@ body {
   background-color: rgb(66, 66, 66);;
 }
 
-.center {
-  margin-top: 5rem;
-}
 .logo {
     color: #fff;
     text-decoration: none; 
@@ -100,10 +95,6 @@ nav ul a:hover, a:active{
   cursor: pointer;
 }
 
-.carousel {
-  height: 514.281px;
-}
-
 header {
     height:100%;
     display: table;
@@ -116,13 +107,17 @@ header {
 }
 
 .snu_color {
-  background-color: rgb(21,56,136) !important;
+  background-color: #153888 !important;
 }
 
-.default_color{background-color:rgb(86,105,200) !important}.default_color_text{color:#2196F3 !important}.icon-block{padding:0
-15px}#intro,#work,#team{padding-top:4rem}#index-banner{min-height:632px;max-height:864px;position:relative;background-color:rgb(21,56,136)}#nav_f{box-shadow:none !important;-webkit-box-shadow:none !important}.text_h{padding:15% 0;font-size:6.0em;font-weight:100;color:white}.brand-logo{position:absolute;color:#fff;display:inline-block;font-size:2.1rem;font-style:normal;font-weight:100;padding:0;letter-spacing:7px}.text_h2{font-weight:100;margin-bottom:4%;line-height:4.5rem}.span_h2{font-weight:300;color:rgb(85,105,200)}.text_b{color:rgb(86,105,200)}.in{font-weight:400 !important;font-style:normal !important}.promo
-i{color:rgb(86,105,200);font-size:7rem;display:block}.card-content
-a{color:rgb(86,105,200)}.card-content a:hover{color:#2196F3}#work,#team{background:rgb(247,247,247)}.text_pink{color:#EF9A9A}nav ul
+.snu_text {
+  color: #153888 !important;
+}
+
+.default_color{background-color:rgb(143,170,220) !important}.default_color_text{color:#2196F3 !important}.icon-block{padding:0
+15px}intro,#work,#team{padding-top:4rem}#index-banner{min-height:632px;max-height:864px;position:relative;background-color:rgb(21,56,136)}#nav_f{box-shadow:none !important;-webkit-box-shadow:none !important}.text_h{padding:15% 0;font-size:6.0em;font-weight:100;color:white}.brand-logo{position:absolute;color:#fff;display:inline-block;font-size:2.1rem;font-style:normal;font-weight:100;padding:0;letter-spacing:7px}.text_h2{font-weight:100;margin-bottom:4%;line-height:4.5rem}.span_h2{font-weight:300;color:rgb(85,105,200)}.text_b{color:rgb(143,170,220)}.in{font-weight:400 !important;font-style:normal !important}.promo
+i{color:rgb(143,170,220);font-size:7rem;display:block}.card-content
+a{color:rgb(143,170,220)}.card-content a:hover{color:#2196F3}#schedule,#apply{background:rgb(247,247,247)}.text_pink{color:#EF9A9A}nav ul
 a{font-size:1.2rem;color:#FFF;letter-spacing:2px;display:block;font-weight:300;padding:0px
 15px}.cd-headline.type .cd-words-wrapper{vertical-align:top;overflow:hidden}.cd-headline.type .cd-words-wrapper::after{content:'';position:absolute;right:0;top:50%;bottom:auto;-webkit-transform:translateY(-50%);-moz-transform:translateY(-50%);-ms-transform:translateY(-50%);-o-transform:translateY(-50%);transform:translateY(-50%);height:90%;width:1px;background-color:#aebcb9}.cd-headline.type .cd-words-wrapper.waiting::after{-webkit-animation:cd-pulse 1s infinite;-moz-animation:cd-pulse 1s infinite;animation:cd-pulse 1s infinite}.cd-headline.type .cd-words-wrapper.selected{background-color:#FFF}.cd-headline.type .cd-words-wrapper.selected::after{visibility:hidden}.cd-headline.type .cd-words-wrapper.selected
 b{color:#153888}.cd-headline.type
@@ -132,13 +127,28 @@ i.in{position:relative;visibility:visible}@-webkit-keyframes cd-pulse{0%{-webkit
 img{height:150px;width:150px;border-radius:75px}.card-avatar .card-content{text-align:center}.card .card-content
 p{margin:15px
 0px}.card-avatar .card-content
-i{font-size:1.5rem}.card-avatar .card-content .card-title{line-height:30px !important}.parallax-container{max-height:400px}footer.page-footer{margin-top:0px !important}
+i{font-size:1.5rem}.card-avatar .card-content .card-title{line-height:30px !important}footer.page-footer{margin-top:0px !important}
 
-@font-face {
-    font-family: 'GODOM';
-    src: url('/fonts/GODOM.ttf');
+.slider .indicators .indicator-item.active {
+  background-color: #153888;
 }
 
-body{
-  font-family:"GODOM",serif;
+.portfolio-box{display:block;position:relative;margin:0 auto;}.portfolio-box .portfolio-box-caption{display:block;position:absolute;bottom:0;width:100%;height:100%;text-align:center;color:#fff;opacity:0;background:rgba(0,0,0,0.75);-webkit-transition:all .35s;transition:all .35s}.portfolio-box .portfolio-box-caption .portfolio-box-caption-content{position:absolute;top:50%;width:100%;text-align:center;-webkit-transform:translateY(-50%);transform:translateY(-50%)}.portfolio-box .portfolio-box-caption .portfolio-box-caption-content .project-category,.portfolio-box .portfolio-box-caption .portfolio-box-caption-content .project-name{padding:0 15px;font-family:'Roboto','Noto-Sans','Helvetica Neue',Arial,sans-serif}.portfolio-box .portfolio-box-caption .portfolio-box-caption-content .project-category{text-transform:uppercase;font-size:14px;font-weight:600}.portfolio-box .portfolio-box-caption .portfolio-box-caption-content .project-name{font-size:18px}.portfolio-box:hover .portfolio-box-caption{opacity:1}@media (min-width: 768px){.portfolio-box .portfolio-box-caption .portfolio-box-caption-content .project-category{font-size:16px}.portfolio-box .portfolio-box-caption .portfolio-box-caption-content .project-name{font-size:30px}}
+#operators .portfolio-box .portfolio-box-caption{border-radius:50%;}
+
+.apply_btn {
+  background-color: #153888;
+  color: white;
+  padding: 1rem 3rem;
+  font-size: 3rem;
+  border-radius: 2rem;
+  -o-transition:background 0.2 ease-in;
+  -ms-transition:background 0.2s ease-in;
+  -moz-transition:background 0.2s ease-in;
+  -webkit-transition:background 0.2s ease-in;
+  transition:background 0.2s ease-in;
+}
+
+.apply_btn:hover {
+  background-color: #2D57B6;
 }
