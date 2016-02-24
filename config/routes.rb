@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   
-  root to: "main#index"
+  root to: "main#index2"
   
   get ':controller(/:action(/:id))'
   post ':controller(/:action(/:id))'
