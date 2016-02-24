@@ -13,6 +13,7 @@
  *= require_tree .
  *= require_self
  */
+* { -webkit-text-size-adjust:none; max-width:100%; }
 html {
   background-color: black;
   color: white;
@@ -24,12 +25,7 @@ body {
 }
 
 .snu_color {
-  background-color: rgba(30, 30, 30, .8);
-  -webkit-transition: background-color 0.5s ease-in-out;
-  -moz-transition: background-color 0.5s ease-in-out;
-  -ms-transition: background-color 0.5s ease-in-out;
-  -o-transition: background-color 0.5s ease-in-out;
-  transition: background-color 0.5s ease-in-out;
+  background-color: rgb(24, 24, 24);
 }
 
 .brand-logo {
@@ -109,10 +105,9 @@ nav ul a:hover, a:active{
 }
 
 header {
-    height:600px; 
+    height:100%;
     display: table;
     position: relative;
-    width: 100%;
     color: #fff;
     background: no-repeat center center fixed;
     background-size: cover;
@@ -138,3 +133,15 @@ img{height:150px;width:150px;border-radius:75px}.card-avatar .card-content{text-
 p{margin:15px
 0px}.card-avatar .card-content
 i{font-size:1.5rem}.card-avatar .card-content .card-title{line-height:30px !important}.parallax-container{max-height:400px}footer.page-footer{margin-top:0px !important}
+
+@font-face {
+    font-family: 'GODOM';
+    src: url('GODOM.eot?#iefix') format('embedded-opentype'), 
+         url('GODOM.woff') format('woff'), 
+         url('GODOM.ttf')  format('truetype'),
+         url('GODOM.svg#svgFontName') format('svg');
+}
+
+body{
+  font-family:"GODOM",serif;
+}
