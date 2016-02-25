@@ -152,3 +152,19 @@ i{font-size:1.5rem}.card-avatar .card-content .card-title{line-height:30px !impo
 .apply_btn:hover {
   background-color: #2D57B6;
 }
+
+.wow{
+    display: table;
+    position: relative;
+    color: #fff;
+    width: 100%;
+    height: 240px;
+    background: no-repeat center center scroll;
+    background-size: cover;
+}
+
+#title2{
+  margin-top: 6rem;
+  font-size: 4vw;
+  text-align: center;
+}
