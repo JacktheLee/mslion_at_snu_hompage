@@ -39,7 +39,7 @@ body {
   left: 0;
 }
 
-h2 { 
+h2 {
   font-size: auto;
   }
 .logo_image {
@@ -82,7 +82,7 @@ i.in{position:relative;visibility:visible}#preloader{position:fixed;top:0;left:0
 .apply_btn {
   background-color: #153888;
   color: white;
-  padding: 1rem 3rem;
+  padding: 1rem 3rem !important;
   font-size: 3rem;
   border-radius: 2rem;
   -o-transition:background 0.2 ease-in;
