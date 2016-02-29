@@ -7,8 +7,16 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/js/materialize.min.js"></script>
+  <style>
+   .section {
+     padding-top : 7rem;
+   }
+   .section.no-pad-bot {
+     padding-top : 2rem;
+   }
+  </style>
 </head>
 <body id="top" class="scrollspy">
 
@@ -55,8 +63,8 @@
     <div class="row">
       <div class="col s12">
         <h5>Contact</h5>
-        Facebook: <%= link_to "https://www.facebook.com/likelionatSNU/", "https://www.facebook.com/likelionatSNU/", class: "snu_text" %><br>
-        Kakao: <%= link_to "@멋쟁이사자처럼atsnu", "http://plus.kakao.com/home/@멋쟁이사자처럼atsnu", class: "snu_text" %><br>
+        Facebook: <%= link_to "https://www.facebook.com/likelionatSNU/", "https://www.facebook.com/likelionatSNU/", class: "snu_text", style: "position: absolute;" %><br>
+        Kakao: <%= link_to "@멋쟁이사자처럼atsnu", "http://plus.kakao.com/home/@멋쟁이사자처럼atsnu", class: "snu_text", style: "position: absolute;" %><br>
         Email: <span class="snu_text">snu@likelion.net</span>
       </div>
     </div>

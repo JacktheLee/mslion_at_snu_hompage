@@ -39,7 +39,7 @@ body {
   left: 0;
 }
 
-h2 { 
+h2 {
   font-size: auto;
   }
 .logo_image {
@@ -82,7 +82,7 @@ i.in{position:relative;visibility:visible}#preloader{position:fixed;top:0;left:0
 .apply_btn {
   background-color: #153888;
   color: white;
-  padding: 1rem 3rem;
+  padding: 1rem 3rem !important;
   font-size: 3rem;
   border-radius: 2rem;
   -o-transition:background 0.2 ease-in;
@@ -95,8 +95,6 @@ i.in{position:relative;visibility:visible}#preloader{position:fixed;top:0;left:0
 .apply_btn:hover {
   background-color: #2D57B6;
 }
-
-<<<<<<< HEAD
 .wow{
     display: table;
     position: relative;
@@ -112,9 +110,40 @@ i.in{position:relative;visibility:visible}#preloader{position:fixed;top:0;left:0
   font-size: 4vw;
   text-align: center;
 }
-=======
 footer.page-footer {
   margin-top: 0;
   background-color: rgb(143,170,220);
 }
->>>>>>> fa7aeab35b90f1e029b3db2c7a73707880331f69
+.wow{
+    display: table;
+    position: relative;
+    color: #fff;
+    width: 100%;
+    height: 240px;
+    background: no-repeat center center scroll;
+    background-size: cover;
+}
+#title2{
+  margin-top:6rem;
+  font-size: 6vw;
+  text-align: center;
+}
+
+@media only screen and (max-device-width : 480px) {
+/* Styles */
+    .text_h{
+        padding: 15% 0;
+        font-size: 4.0em;
+        font-weight: 100;
+        color: white;
+    }
+}
+@media only screen and (min-width : 1224px) {
+/* Styles */
+    .text_h{
+            padding: 15% 0;
+            font-size: 5.0em;
+            font-weight: 100;
+            color: white;
+    }
+}
