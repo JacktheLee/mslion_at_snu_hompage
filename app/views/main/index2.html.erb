@@ -1,7 +1,7 @@
 <div class="section no-pad-bot" id="index-banner">
   <div class="container">
     <h1 class="text_h center header cd-headline letters type">
-      <span>I Love</span> 
+      <span>I Love</span>
       <span class="cd-words-wrapper waiting">
         <b class="is-visible">creating</b>
         <b>programming</b>
@@ -11,12 +11,11 @@
   </div>
 </div>
 
-<!--Intro and service-->
 <div id="intro" class="section scrollspy">
   <div class="container">
     <div class="row">
       <div  class="col s12">
-        <h2 class="center header text_h2"> <span class="span_h2">기술적 장벽</span> 때문에 본인의 생각을<br> <span class="span_h2">세상 밖으로</span> 표현하지 못하신 분들을 위한 <span class="span_h2">프로그래밍 교육 동아리</span> </h2>
+        <h2 class="center header text_h2"> <span class="span_h2">기술적 장벽</span> 때문에 본인의 생각을<br> <span class="span_h2">세상 밖으로</span> 표현하지 못하신 분들을 위한<br><span class="span_h2">프로그래밍 교육 동아리</span> </h2>
       </div>
       <div  class="col s12 m4 l4">
         <div class="center promo promo-example">
@@ -139,7 +138,7 @@
           <a class="carousel-item" href="#three!"><img src="<%= asset_path('4.png') %>"></a>
           <a class="carousel-item" href="#four!"><img src="<%= asset_path('5.png') %>"></a>
         </div>
-        <%= link_to "지원하기", "http://likelion.net", class: "apply_btn" %>
+        <a href="http://likelion.net" class="apply_btn">지원하기</a>
       </div>
     </div>
   </div>
@@ -149,5 +148,6 @@
 $(document).ready(function(){
     $('.slider').slider({full_width: true});
     $('.carousel').carousel();
+    $('.parallax').parallax();
 });
 </script>
