@@ -80,10 +80,12 @@ i.in{position:relative;visibility:visible}#preloader{position:fixed;top:0;left:0
 #operators .portfolio-box .portfolio-box-caption{border-radius:50%;}
 
 .apply_btn {
+  margin: 0 1rem;
+  display: inline-block !important;
   background-color: #153888;
   color: white;
   padding: 1rem 3rem !important;
-  font-size: 3rem;
+  font-size: 3rem !important;
   border-radius: 2rem;
   -o-transition:background 0.2 ease-in;
   -ms-transition:background 0.2s ease-in;
