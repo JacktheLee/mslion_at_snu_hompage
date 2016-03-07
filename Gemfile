@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
  
-gem 'therubyracer' 
+gem 'therubyracer', '0.12.2'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.4'
@@ -26,6 +26,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'carrierwave'
 gem 'mini_magick'
+gem 'libv8', '3.16.14.13'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
