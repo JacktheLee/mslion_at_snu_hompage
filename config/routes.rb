@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  devise_for :users, controllers: {
+    registrations: "user/registrations"
+  }
   root to: "main#index2"
   get ':controller(/:action(/:id))'
   post ':controller(/:action(/:id))'
