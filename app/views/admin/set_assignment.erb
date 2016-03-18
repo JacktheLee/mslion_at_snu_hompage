@@ -1,0 +1,6 @@
+<h1>과제 만들기</h1>
+<%= form_tag "/admin/set_assignment_proc" do %>
+  <input type="text" name="name" placeholder="숙제 제목">
+  <input type="text" name="description" placeholder="간단 설명">
+  <input type="submit" class="btn" value="만들기">
+<% end %>

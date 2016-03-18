@@ -1,0 +1,73 @@
+<div class="container">
+  <% if params[:submit] == "true" %>
+    <h3>성공적으로 제출되었습니다</h3>
+  <% end %>
+  <h1>과제 제출</h1>
+  <div class="row">
+    <%= form_tag "/assignment/submit_proc", class: "col s12", multipart: true do %>
+      <div class="row">
+        <div class="input-field col s12">
+          <select id="title" name="title">
+            <option value="" disabled selected>과제를 선택하세요</option>
+            <% AssignmentTitle.all.each do |item| %>
+              <option value="<%= item.name %>"><%= item.name %></option>
+            <% end %>
+          </select>
+          <label>과제</label>
+          <p id="assign_description"></p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col s12 file-field input-field">
+          <div class="btn">
+            <span>Image</span>
+            <input type="file" accept="image/*" name="img">
+          </div>
+          <div class="file-path-wrapper">
+            <input class="file-path validate" type="text">
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <input id="git_url" type="url" class="validate" name="git_url">
+          <label for="git_url">URL</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <textarea id="comment" name="comment" class="materialize-textarea"></textarea>
+          <label for="comment">설명</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col s12 center">
+          <input class="btn waves-effect waves-light" type="submit" name="action" value="Submit">
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+<script>
+$(document).ready(function() {
+  $('select').material_select();
+
+  $('#title').change(function(){
+    console.log($(this).val());
+    $.ajax({
+      url: '/assignment/get_info',
+      dataType: 'json',
+      data: {
+        title: $(this).val()
+      },
+      success: function(data){
+        $('#assign_description').text(data.desc);
+      },
+      error: function(){
+        $('#assign_description').text("에러가 발생했습니다");
+      }
+    });
+  });
+});
+</script>

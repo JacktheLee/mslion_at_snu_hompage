@@ -3,6 +3,8 @@ source 'https://rubygems.org'
 gem 'therubyracer', '0.12.2'
 
 gem 'devise'
+gem 'fog'
+gem 'figaro'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.4'

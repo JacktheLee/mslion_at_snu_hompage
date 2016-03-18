@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'admin/index'
+
+  get 'assignment/index'
+
   devise_for :users, controllers: {
     registrations: "user/registrations"
   }
