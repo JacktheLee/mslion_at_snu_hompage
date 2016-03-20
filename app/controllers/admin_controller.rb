@@ -15,8 +15,6 @@ class AdminController < ApplicationController
   end
 
   def team_lotto
-
-    @week = if Team.last then Team.last.week + 1 else 0 end
   end
 
   def team_lotto_proc
@@ -28,7 +26,6 @@ class AdminController < ApplicationController
         team.users << User.where(name: name).take
       end
     end
-
     respond_to do |format|
       format.json { render json: {teams: teams}}
     end

@@ -6,10 +6,14 @@
   </div>
 </div>
     <div class="col s12 center">
-      <div id="count_down">
-        <h1>3</h1>
+      <div id="count_down" style="display: none;">
+        <h1 id="count_num">3</h1>
       </div>
-      <div id="team_list" style="display: none;">
+      <div class="container" id="team_list" style="display: none;">
+        <table>
+          <tbody id="list_tbody">
+          </tbody>
+        </table>
       </div>
     </div>
     <div class="col s12 center">
@@ -22,7 +26,40 @@
 $(document).ready(function(){
   $('#lotto_btn').click(function(e){
     $.ajax({
-      //url: "/admin/team_lotto_proc",
+      url: "/admin/team_lotto_proc",
+      dataType: "json",
+      success: function(data){
+        $('#team_list').hide();
+        $('#count_down').show();
+        var count = 3
+        $('#count_num').text(count);
+        $.count_down = function() {
+          setTimeout(function(){
+            count--;
+            $('#count_num').text(count);
+            if (count > 0) $.count_down();
+            else $.show_result();
+          },1000);
+        }
+        $.show_result = function() {
+          $('#count_down').hide();
+          $('#list_tbody').empty();
+          console.log(data.teams)
+          for (i = 0; i < data.teams.length; i++) {
+            $('#list_tbody').append('<tr>');
+            $('#list_tbody').append('<td>'+i+'조</td>');
+            for (j = 0; j < data.teams[i].length; j++){
+              $('#list_tbody').append('<td>'+data.teams[i][j]+'</td>');
+            }
+            $('#list_tbody').append('</tr>');
+          }
+          $('#team_list').show();
+        }
+        $.count_down();
+      },
+      error: function(){
+        $('#count_num').text('에러가 발생했습니다ㅠㅠ');
+      }
     });
   });
 });
