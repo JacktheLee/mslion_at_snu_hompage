@@ -15,9 +15,7 @@ class AdminController < ApplicationController
   end
 
   def team_lotto
-<<<<<<< HEAD
 
-=======
     @week = if Team.last then Team.last.week + 1 else 0 end
   end
 
@@ -31,7 +29,6 @@ class AdminController < ApplicationController
     respond_to do |format|
       format.json { render json: {teams: teams}}
     end
->>>>>>> b801a4f23cae0234c49fc7e14c078aa72679ca26
   end
 
   private
