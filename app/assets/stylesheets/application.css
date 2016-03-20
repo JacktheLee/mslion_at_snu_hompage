@@ -149,3 +149,7 @@ footer.page-footer {
             color: white;
     }
 }
+
+.select-wrapper input.select-dropdown{
+  font-size:130%;
+}
