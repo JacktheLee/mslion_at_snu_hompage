@@ -3,5 +3,26 @@
     <div class="col s12 center">
       <h5>조추첨</h5>
     </div>
+    <div class="col s12 center">
+      <div id="count_down">
+        <h1>3</h1>
+      </div>
+      <div id="team_list" style="display: none;">
+      </div>
+    </div>
+    <div class="col s12 center">
+      <button id="lotto_btn" class="btn snu_color">조추첨</button>
+      <%= @week %>
+    </div>
   </div>
 </div>
+
+<script>
+$(document).ready(function(){
+  $('#lotto_btn').click(function(e){
+    $.ajax({
+      //url: "/admin/team_lotto_proc",
+    });
+  });
+});
+</script>
