@@ -15,6 +15,7 @@ class AdminController < ApplicationController
   end
 
   def team_lotto
+
     @week = if Team.last then Team.last.week + 1 else 0 end
   end
 

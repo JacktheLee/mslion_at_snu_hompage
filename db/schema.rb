@@ -66,6 +66,7 @@ ActiveRecord::Schema.define(version: 20160320103547) do
     t.string   "name"
     t.integer  "score",                  default: 0
     t.string   "authority",              default: "student"
+    t.integer  "team_id"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
