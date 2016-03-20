@@ -37,17 +37,20 @@
       <a href="/main/index" id="logo-container"><img class="brand-logo" src="<%= asset_path('hlogo_white_2.png') %>"></a>
       <% end %>
       <ul class="right hide-on-med-and-down">
+      <% if current_page?("/main/index") %>
         <li><a href="#intro">소개</a></li>
         <li><a href="#history">한 일들</a></li>
         <li><a href="#work">만든 서비스</a></li>
         <li><a href="#schedule">주요일정</a></li>
         <li><a href="#member">구성원</a></li>
+      <% end %>
         <% if user_signed_in? %>
           <% if current_user.is_admin %>
             <li><a href="/admin/index">관리자</a></li>
           <% end %>
           <li><a href="/assignment/index">과제 제출</a></li>
           <li><a href="/assignment/board">과제 목록</a></li>
+          <li><a href="/ranking/rank">랭킹</a></li>
           <li><%= link_to "로그아웃", destroy_user_session_path, method: "delete" %></li>
         <% else %>
           <li><%= link_to "로그인", new_user_session_path %></li>
@@ -65,6 +68,7 @@
           <% end %>
           <li><a href="/assignment/index">과제 제출</a></li>
           <li><a href="/assignment/board">과제 목록</a></li>
+          <li><a href="/ranking/rank">랭킹</a></li>
           <li><%= link_to "로그아웃", destroy_user_session_path, method: "delete" %></li>
         <% else %>
           <li><%= link_to "로그인", new_user_session_path %></li>
@@ -78,7 +82,7 @@
 <%= yield %>
 
 <!--Footer-->
-<footer id="contact" class="page-footer default_color scrollspy" style="position: relative;">
+<footer id="contact" class="page-footer default_color scrollspy">
   <div class="container" style="bottom: 0px">
     <div class="row">
       <div class="col s12">
