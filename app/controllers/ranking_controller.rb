@@ -1,4 +1,4 @@
 class RankingController < ApplicationController
-    def board
+    def rank
     end
 end

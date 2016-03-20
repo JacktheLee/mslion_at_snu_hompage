@@ -14,6 +14,10 @@ class AdminController < ApplicationController
     redirect_to "/admin/index"
   end
 
+  def team_lotto
+
+  end
+
   private
 
   def is_admin

@@ -13,7 +13,6 @@
               <option value="<%= item.name %>"><%= item.name %></option>
             <% end %>
           </select>
-          <label>과제</label>
           <p id="assign_description"></p>
         </div>
       </div>
@@ -31,13 +30,13 @@
       <div class="row">
         <div class="input-field col s12">
           <input id="git_url" type="url" class="validate" name="git_url">
-          <label for="git_url">URL</label>
+          <label for="git_url" style="font-size:150%;">URL</label>
         </div>
       </div>
       <div class="row">
         <div class="input-field col s12">
-          <textarea id="comment" name="comment" class="materialize-textarea"></textarea>
-          <label for="comment">설명</label>
+          <textarea id="comment" name="comment" class="materialize-textarea" style="padding: 1rem 0;"></textarea>
+          <label for="comment" style="font-size:150%;">설명</label>
         </div>
       </div>
       <div class="row">
