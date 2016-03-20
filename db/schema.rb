@@ -11,7 +11,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20160318145915) do
+=======
+ActiveRecord::Schema.define(version: 20160320103547) do
+>>>>>>> b801a4f23cae0234c49fc7e14c078aa72679ca26
 
   create_table "assignment_titles", force: :cascade do |t|
     t.string   "name"
@@ -43,6 +47,16 @@ ActiveRecord::Schema.define(version: 20160318145915) do
     t.datetime "updated_at",    null: false
   end
 
+<<<<<<< HEAD
+=======
+  create_table "user_teams", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "team_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+>>>>>>> b801a4f23cae0234c49fc7e14c078aa72679ca26
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "",        null: false
     t.string   "encrypted_password",     default: "",        null: false
@@ -59,7 +73,10 @@ ActiveRecord::Schema.define(version: 20160318145915) do
     t.string   "name"
     t.integer  "score",                  default: 0
     t.string   "authority",              default: "student"
+<<<<<<< HEAD
     t.integer  "team_id"
+=======
+>>>>>>> b801a4f23cae0234c49fc7e14c078aa72679ca26
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
