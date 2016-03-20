@@ -17,6 +17,10 @@ class AdminController < ApplicationController
   def team_lotto
 
   end
+  
+  def rank_team
+    
+  end
 
   private
 
