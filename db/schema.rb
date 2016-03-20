@@ -30,7 +30,8 @@ ActiveRecord::Schema.define(version: 20160318145915) do
   end
 
   create_table "teams", force: :cascade do |t|
-    t.integer  "tema_number"
+    t.integer  "team_number"
+    t.integer  "week"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end
