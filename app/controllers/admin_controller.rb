@@ -33,6 +33,15 @@ class AdminController < ApplicationController
   
   def rank_team
   end
+  
+  def rank_team_proc
+  end
+  
+  def team_info
+     week_team = Team.where(week: params[:week]).take
+    respond_to do |format|
+      format.json { render json: {num: week_team.team_number}}
+  end
 
   private
 
