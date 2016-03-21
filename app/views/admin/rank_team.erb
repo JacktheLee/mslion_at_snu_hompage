@@ -1,7 +1,5 @@
 <div class="container">
-    <h1>팀랭킹 매기기</h1>
-      <div class="row">
-    <%= form_tag "/admin/rank_team_proc", class: "col s12", multipart: true do %>
+  <h1>팀랭킹 매기기</h1>
       <div class="row">
         <div class="input-field col s12">
           <select id="week" name="week">
@@ -10,39 +8,11 @@
               <option value="<%= item.week %>"><%= item.week %></option>
             <% end %>
           </select>
-          <p id="assign_description"></p>
+          <%= form_tag "/admin/rank_team_proc", class: "col s12", multipart: true do %>          
+            <p id="assign_description"></p>
+          <% end %>
         </div>
       </div>
-      <div class="row">
-        <div class="col s12 file-field input-field">
-          <div class="btn">
-            <span>Image</span>
-            <input type="file" accept="image/*" name="img">
-          </div>
-          <div class="file-path-wrapper">
-            <input class="file-path validate" type="text">
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="input-field col s12">
-          <input id="git_url" type="url" class="validate" name="git_url" style="font-size:150%;">
-          <label for="git_url" style="font-size:150%;">URL</label>
-        </div>
-      </div>
-      <div class="row">
-        <div class="input-field col s12">
-          <textarea id="comment" name="comment" class="materialize-textarea" style="padding: 1rem 0; font-size:150%;"></textarea>
-          <label for="comment" style="font-size:150%;">설명</label>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col s12 center" style="margin-bottom:10%;">
-          <input class="btn waves-effect waves-light" type="submit" name="action" value="Submit">
-        </div>
-      </div>
-    <% end %>
-  </div>
 </div>
 
 
@@ -56,10 +26,14 @@ $(document).ready(function() {
       url: '/admin/team_info',
       dataType: 'json',
       data: {
-        title: $(this).val()
+        week: $(this).val()
       },
       success: function(data){
-        $('#assign_description').text(data.num);
+        console.log(data.num.length);
+        for(i=0; i<5; i++) {
+          
+          $('#assign_description').text(data.num[i]);
+        }
       },
       error: function(){
         $('#assign_description').text("에러가 발생했습니다");
