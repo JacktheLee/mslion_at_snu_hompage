@@ -149,3 +149,10 @@ footer.page-footer {
             color: white;
     }
 }
+
+.select-wrapper input.select-dropdown{
+  font-size:130%;
+}
+button, input, optgroup, select, textarea{
+      color: #039be5;
+}

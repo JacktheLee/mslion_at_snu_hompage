@@ -4,6 +4,8 @@ class User < ActiveRecord::Base
   has_many :assignments, through: :user_assignments
 
   belongs_to :team
+  has_many :user_teams
+  has_many :teams, through: :user_teams
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
