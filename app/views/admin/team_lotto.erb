@@ -1,10 +1,8 @@
-<div class="container">
+<div class="container" style="margin-top: 5rem; margin-bottom: 5rem;">
   <div class="row">
     <div class="col s12 center">
       <h5>조추첨</h5>
     </div>
-  </div>
-</div>
     <div class="col s12 center">
       <div id="count_down" style="display: none;">
         <h1 id="count_num">3</h1>
@@ -17,7 +15,7 @@
       </div>
     </div>
     <div class="col s12 center">
-      <button id="lotto_btn" class="btn snu_color">조추첨</button>
+      <button id="lotto_btn" class="btn snu_color">뽑기</button>
     </div>
   </div>
 </div>
@@ -29,10 +27,6 @@ $(document).ready(function(){
       url: "/admin/team_lotto_proc",
       dataType: "json",
       success: function(data){
-        $('#team_list').hide();
-        $('#count_down').show();
-        var count = 3
-        $('#count_num').text(count);
         $.count_down = function() {
           setTimeout(function(){
             count--;
@@ -44,7 +38,6 @@ $(document).ready(function(){
         $.show_result = function() {
           $('#count_down').hide();
           $('#list_tbody').empty();
-          console.log(data.teams)
           for (i = 0; i < data.teams.length; i++) {
             $('#list_tbody').append('<tr>');
             $('#list_tbody').append('<td>'+i+'조</td>');
@@ -55,6 +48,11 @@ $(document).ready(function(){
           }
           $('#team_list').show();
         }
+        var count = 3;
+        $('#team_list').hide();
+        $('#count_down').show();
+        var count = 3
+        $('#count_num').text(count);
         $.count_down();
       },
       error: function(){
