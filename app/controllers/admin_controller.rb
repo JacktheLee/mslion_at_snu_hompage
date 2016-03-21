@@ -41,6 +41,7 @@ class AdminController < ApplicationController
      week_team = Team.where(week: params[:week]).take
     respond_to do |format|
       format.json { render json: {num: week_team.team_number}}
+    end
   end
 
   private
