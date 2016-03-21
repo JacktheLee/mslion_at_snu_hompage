@@ -17,25 +17,6 @@ class AdminController < ApplicationController
   def team_lotto
   end
 
-<<<<<<< HEAD
-    @week = if Team.last then Team.last.week + 1 else 0 end
-  end
-
-  def team_lotto_proc
-    teams = Snulion.make_team(3)
-    week = if Team.last then Team.last.week + 1 else 0 end
-    teams.each do |item|
-      ##여기부터 곧 만들어야징
-    end
-
-    respond_to do |format|
-      format.json { render json: {teams: teams}}
-    end
-  end
-  
-  def rank_team
-    
-=======
   def team_lotto_proc
     teams = Snulion.make_team(3)
     week = if Team.last then Team.last.week + 1 else 0 end
@@ -48,7 +29,9 @@ class AdminController < ApplicationController
     respond_to do |format|
       format.json { render json: {teams: teams}}
     end
->>>>>>> 7c5ba6f07bf7f0ad88781741faf3ef103865e547
+  end
+  
+  def rank_team
   end
 
   private
