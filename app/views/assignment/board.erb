@@ -18,6 +18,7 @@
               <a href="<%=assign.assignment.git_url%>"><%=assign.assignment.git_url%></a>
               <img src="<%= asset_path(assign.assignment.img) %>">
               <p><%= assign.assignment.comment %></p>
+              <span class="likebtn-wrapper" data-white_label="true" data-identifier="item_1" data-show_like_label="false" data-dislike_enabled="false" data-i18n_after_like="좋아요" data-i18n_like_tooltip="좋아요" data-i18n_unlike_tooltip="취소하기"></span>
             <% end %>
           <% end %>
         </div>
@@ -27,4 +28,5 @@
    $(document).ready(function(){
     $('ul.tabs').tabs();
     });
+    (function(d,e,s){if(d.getElementById("likebtn_wjs"))return;a=d.createElement(e);m=d.getElementsByTagName(e)[0];a.async=1;a.id="likebtn_wjs";a.src=s;m.parentNode.insertBefore(a, m)})(document,"script","//w.likebtn.com/js/w/widget.js");
 </script>
