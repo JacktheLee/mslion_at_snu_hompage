@@ -32,6 +32,7 @@ ActiveRecord::Schema.define(version: 20160320103547) do
   create_table "teams", force: :cascade do |t|
     t.integer  "team_number"
     t.integer  "week"
+    t.integer  "team_score"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end

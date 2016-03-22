@@ -1,1 +1,30 @@
-<%= @assignments.inspect %>
+ <div class="row">
+    <div class="col s12">
+      <ul class="tabs">
+        <%  @assignmenttitles.each do |title| %> 
+          <% if title.name=="Code Academy" %>
+            <li class="tab col s3"><a class="active" href="#assign1">Code Academy</a></li>
+          <% else %>
+           <li class="tab col s3"><a href="#assign<%= title.id%>"><%= title.name%></a></li>
+          <% end %>
+        <% end %>
+      </ul>
+    </div>
+      <%  @assignmenttitles.each do |title| %> 
+        <div id="assign<%= title.id%>" class="col s12">
+          <% @userassigns.each do |assign| %>
+            <% if assign.assignment.title==title.name %>
+              <h1><%=assign.user.name%></h1>
+              <a href="<%=assign.assignment.git_url%>"><%=assign.assignment.git_url%></a>
+              <img src="<%= asset_path(assign.assignment.img) %>">
+              <p><%= assign.assignment.comment %></p>
+            <% end %>
+          <% end %>
+        </div>
+      <% end %>
+  </div>
+<script>
+   $(document).ready(function(){
+    $('ul.tabs').tabs();
+    });
+</script>

@@ -18,7 +18,8 @@ class AssignmentController < ApplicationController
   end
 
   def board
-    @assignments = Assignment.all
+    @assignmenttitles = AssignmentTitle.all
+    @userassigns=UserAssignment.all
   end
 
   def get_info
