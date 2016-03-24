@@ -35,12 +35,17 @@ class AdminController < ApplicationController
   end
 
   def rank_team_proc
+    selected_team = Team.find(params[:teamid].to_i)
+    selected_team.update(team_score: params[:score].to_i)
+    respond_to do |format|
+      format.json { render json: {score: selected_team.team_score}}
+    end
   end
 
   def team_info
      week_teams = Team.where(week: params[:week].to_i)
     respond_to do |format|
-      format.json { render json: {num: week_teams.pluck(:team_number)}}
+      format.json { render json: {team: week_teams, num: week_teams.pluck(:team_number)}}
     end
   end
 
