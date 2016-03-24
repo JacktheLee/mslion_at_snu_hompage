@@ -30,13 +30,13 @@ class AdminController < ApplicationController
       format.json { render json: {teams: teams}}
     end
   end
-  
+
   def rank_team
   end
-  
+
   def rank_team_proc
   end
-  
+
   def team_info
      week_teams = Team.where(week: params[:week].to_i)
     respond_to do |format|
