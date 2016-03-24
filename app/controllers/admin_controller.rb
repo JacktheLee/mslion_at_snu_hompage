@@ -18,7 +18,7 @@ class AdminController < ApplicationController
   end
 
   def team_lotto_proc
-    teams = Snulion.make_team(3)
+    teams = Snulion.make_team(5)
     week = if Team.last then Team.last.week + 1 else 0 end
     teams.each_with_index do |item, i|
       team = Team.create(team_number: i, week: week)
