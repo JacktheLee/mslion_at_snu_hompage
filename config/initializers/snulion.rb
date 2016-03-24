@@ -2,7 +2,6 @@ class Snulion
   def self.get_member
     return @student_member
   end
-
   def self.make_team(member_number)
     result = []
     remnant = @student_member
