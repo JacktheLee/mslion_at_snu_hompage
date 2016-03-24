@@ -4,12 +4,12 @@
         <div class="input-field col s12">
           <select id="week" name="week">
             <option value="" disabled selected>주차를 선택하세요</option>
-            <% Team.all.each do |item| %>
-              <option value="<%= item.week %>"><%= item.week %></option>
+            <% Team.all.pluck(:week).uniq.each do |item| %>
+              <option value="<%= item %>"><%= item %></option>
             <% end %>
           </select>
           <%= form_tag "/admin/rank_team_proc", class: "col s12", multipart: true do %>          
-            <p id="assign_description"></p>
+            <p id="list_team"></p>
           <% end %>
         </div>
       </div>
@@ -30,9 +30,9 @@ $(document).ready(function() {
       },
       success: function(data){
         console.log(data.num.length);
-        for(i=0; i<5; i++) {
-          
-          $('#assign_description').text(data.num[i]);
+        for(i=0; i<data.num.length; i++) {
+          $('#list_team').append(data.num[i]);
+          $('#list_team').append("<br>");
         }
       },
       error: function(){

@@ -38,9 +38,9 @@ class AdminController < ApplicationController
   end
   
   def team_info
-     week_team = Team.where(week: params[:week]).take
+     week_teams = Team.where(week: params[:week].to_i)
     respond_to do |format|
-      format.json { render json: {num: week_team.team_number}}
+      format.json { render json: {num: week_teams.pluck(:team_number)}}
     end
   end
 
