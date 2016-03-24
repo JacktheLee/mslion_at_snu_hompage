@@ -1,7 +1,11 @@
 <div class="container">
   <div class="row">
     <div class="col s12">
-      <%= @teams.inspect %>
+      <% @teams.each do |team| %>
+        팀: <%= team.inspect  %><br>
+        유저: <%= team.users.inspect %><br><br>
+        <hr>
+      <% end %>
     </div>
   </div>
 </div>
