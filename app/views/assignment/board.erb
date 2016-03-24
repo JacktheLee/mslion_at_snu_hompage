@@ -13,6 +13,7 @@
   </div>
   <%  @assignmenttitles.each do |title| %> 
     <div id="assign<%= title.id%>" class="col s12">
+      <% j=0;%>
       <% @userassigns.each do |assign| %>
         <% if assign.assignment.title==title.name %>
           <div class="container">
@@ -29,7 +30,11 @@
             </div>
             </div>
           </div>
+          <% j=j+1; %>
         <% end %>
+      <% end %>
+      <% if j==0 %>
+        <h1>제출한 사람이 없음</h1>
       <% end %>
     </div>
   <% end %>
