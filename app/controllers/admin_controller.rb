@@ -44,6 +44,11 @@ class AdminController < ApplicationController
     end
   end
 
+  def team_view
+    last_week = Team.last.week
+    @teams = Team.where(week: last_week)
+  end
+
   private
 
   def is_admin
