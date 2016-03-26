@@ -49,6 +49,16 @@ class AdminController < ApplicationController
     @teams = Team.where(week: last_week)
   end
 
+  def idea_lotto
+  end
+
+  def idea_lotto_proc
+    list = Snulion.get_member.sample(15)
+    respond_to do |format|
+      format.json { render json: {list: list}}
+    end
+  end
+
   private
 
   def is_admin
