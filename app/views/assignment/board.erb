@@ -19,7 +19,7 @@
                 <div class="card-content white-text">
                   <span class="card-title"><h3><%=assign.user.name%></h3></span>
                   <p><%= assign.assignment.comment %></p>
-                  <img src="<%= asset_path(assign.assignment.img) %>">
+                  <a href="<%= asset_path(assign.assignment.img) %>" class="fancybox"><img src="<%= asset_path(assign.assignment.img) %>"></a>
                 </div>
                 <div class="card-action">
                   <a style="font-size:50%"href="<%=assign.assignment.git_url%>"><%=assign.assignment.git_url%></a>
@@ -39,3 +39,8 @@
     <% end %>
   </div>
 </div>
+<script>
+  $(document).ready(function() {
+    $('.fancybox').fancybox();
+});
+</script>
