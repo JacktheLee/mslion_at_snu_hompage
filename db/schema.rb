@@ -45,8 +45,9 @@ ActiveRecord::Schema.define(version: 20160324121519) do
   create_table "user_assignments", force: :cascade do |t|
     t.integer  "user_id"
     t.integer  "assignment_id"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
+    t.boolean  "likbtn",        default: false
+    t.datetime "created_at",                    null: false
+    t.datetime "updated_at",                    null: false
   end
 
   create_table "user_teams", force: :cascade do |t|

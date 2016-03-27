@@ -1,7 +1,10 @@
 <div class="container" style="width: 50%;">
   <% if params[:submit] == "true" %>
+  <div class="row">
     <h3>성공적으로 제출되었습니다</h3>
-  <% end %>
+    <img src="<%= asset_path("정은지 사진")%>">
+  </div>
+  <% else %>
   <h1>과제 제출</h1>
   <div class="row">
     <%= form_tag "/assignment/submit_proc", class: "col s12", multipart: true do %>
@@ -44,6 +47,7 @@
           <input class="btn waves-effect waves-light" type="submit" name="action" value="Submit">
         </div>
       </div>
+    <% end %>
     <% end %>
   </div>
 </div>
