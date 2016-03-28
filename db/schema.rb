@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160324121519) do
+ActiveRecord::Schema.define(version: 20160328081115) do
 
   create_table "assignment_titles", force: :cascade do |t|
     t.string   "name"
@@ -37,17 +37,17 @@ ActiveRecord::Schema.define(version: 20160324121519) do
   create_table "teams", force: :cascade do |t|
     t.integer  "team_number"
     t.integer  "week"
-    t.integer  "team_score",  default: 0
-    t.datetime "created_at",              null: false
-    t.datetime "updated_at",              null: false
+    t.integer  "team_score"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
   create_table "user_assignments", force: :cascade do |t|
     t.integer  "user_id"
     t.integer  "assignment_id"
-    t.boolean  "likbtn",        default: false
     t.datetime "created_at",                    null: false
     t.datetime "updated_at",                    null: false
+    t.boolean  "likbtn",        default: false
   end
 
   create_table "user_teams", force: :cascade do |t|
