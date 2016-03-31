@@ -226,3 +226,9 @@ button, input, optgroup, select, textarea{
 #assigntitle{
   color:white;
 }
+.section {
+   padding-top : 7rem;
+ }
+ .section.no-pad-bot {
+   padding-top : 2rem;
+ }
