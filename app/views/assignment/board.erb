@@ -4,38 +4,56 @@
       <h1>과제 목록</h1>
       <ul class="tabs" style="background-color:black;">
         <%  @assignmenttitles.each do |title| %> 
-          <li class="tab col s3"><a href="#assign<%= title.id%>"><%= title.name%></a></li>
+          <li class="tab col s3"><a id="assigntitle" href="#assign<%= title.id%>"><%= title.name%></a></li>
         <% end %>
       </ul>
     </div>
+    <div class="col s12">
+    <div id="wrapper">
+    <div id="columns">
     <%  @assignmenttitles.each do |title| %> 
-      <div id="assign<%= title.id%>" class="col s12">
+      <div id="assign<%= title.id%>">
         <% j=0;%>
         <% @userassigns.each do |assign| %>
           <% if assign.assignment.title==title.name %>
-            <div class="container">
-              <div class="col s6">
-                <div class="card blue-grey darken-1">
-                <div class="card-content white-text">
-                  <span class="card-title"><h3><%=assign.user.name%></h3></span>
+              <div class="pin">
+                  <h1><%=assign.user.name%></h1>
                   <p><%= assign.assignment.comment %></p>
-                  <img src="<%= asset_path(assign.assignment.img) %>">
-                </div>
-                <div class="card-action">
+                  <a href="<%= asset_path(assign.assignment.img) %>" class="fancybox"><img src="<%= asset_path(assign.assignment.img) %>"></a>
                   <a style="font-size:50%"href="<%=assign.assignment.git_url%>"><%=assign.assignment.git_url%></a>
-                </div>
+                  <a style="font-size:50%" href="">좋아요</a>
               </div>
-              </div>
-            </div>
             <% j=j+1; %>
+            <% end %>
+        <% end %>
+          <% if j==0 %>
+              <h1>제출한 사람이 없음</h1>
           <% end %>
-        <% end %>
-        <% if j==0 %>
-          <div class="col s12 center">
-            <h1>제출한 사람이 없음</h1>
-          </div>
-        <% end %>
-      </div>
+        </div>
     <% end %>
+    </div>
+    </div>
+    </div>
   </div>
 </div>
+<script>
+  $(document).ready(function() {
+    $('.fancybox').fancybox();
+  $('#title').click(function(){
+    console.log($(this).val());
+    $.ajax({
+      url: '/assignment/get_info',
+      dataType: 'json',
+      data: {
+        title: $(this).val()
+      },
+      success: function(data){
+        $('#assign_description').text(data.desc);
+      },
+      error: function(){
+        $('#assign_description').text("에러가 발생했습니다");
+      }
+    });
+  });
+});
+</script>

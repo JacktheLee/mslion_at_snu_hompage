@@ -1,0 +1,52 @@
+<div class="row">
+  <div class="col s12 center">
+    <h1>아이디어 순서 짜기</h1>
+  </div>
+  <div class="col s12 center">
+    <div id="count_down" style="display: none;">
+      <h1 id="count_num">3</h1>
+    </div>
+    <div id="team_list" style="display: none;">
+      <p id="idea_list" style="font-size: 1.2rem;">
+      </p>
+    </div>
+  </div>
+  <div class="col s12 center">
+    <button id="lotto_btn" class="btn snu_color">뽑기</button>
+  </div>
+</div>
+<script>
+$(document).ready(function(){
+  $('#lotto_btn').click(function(e){
+    $.ajax({
+      url: "/admin/idea_lotto_proc",
+      dataType: "json",
+      success: function(data){
+        $.count_down = function() {
+          setTimeout(function(){
+            count--;
+            $('#count_num').text(count);
+            if (count > 0) $.count_down();
+            else $.show_result();
+          },1000);
+        }
+        $.show_result = function() {
+          $('#count_down').hide();
+          $('#idea_list').empty();
+          $('#team_list').show();
+          $('#idea_list').append(data.list.join(', '));
+        }
+        var count = 3;
+        $('#team_list').hide();
+        $('#count_down').show();
+        var count = 3
+        $('#count_num').text(count);
+        $.count_down();
+      },
+      error: function(){
+        $('#count_num').text('에러가 발생했습니다ㅠㅠ');
+      }
+    });
+  });
+});
+</script>

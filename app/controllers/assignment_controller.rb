@@ -6,7 +6,8 @@ class AssignmentController < ApplicationController
   end
 
   def submit_proc
-    assignment = Assignment.create(title: params[:title], comment: params[:comment], git_url: params[:git_url], img: params[:img])
+    target = AssignmentTitle.where(name: params[:title]).take
+    assignment = Assignment.create(title: params[:title], comment: params[:comment], git_url: params[:git_url], img: params[:img], assignment_title: target)
     #개인 제출
     UserAssignment.create(user: current_user, assignment: assignment)
     #팀 제출
