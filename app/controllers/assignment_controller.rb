@@ -19,7 +19,7 @@ class AssignmentController < ApplicationController
   end
 
   def board
-     @test_assigntitle= AssignmentTitle.where(name: "Code Academy").take
+     @test_assigntitle= AssignmentTitle.where(name: "Codeacademy 1").take
 
   end
   
