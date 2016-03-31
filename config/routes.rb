@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'ajax/upanel'
+
   get 'admin/index'
 
   get 'assignment/index'
