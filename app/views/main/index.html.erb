@@ -1,11 +1,11 @@
 <div class="section no-pad-bot" id="index-banner">
   <div class="container">
     <h1 class="text_h center header cd-headline letters type">
-      <span>I Love</span><br class="hide-on-large-only">
+      <br class="hide-on-large-only">
       <span class="cd-words-wrapper waiting">
-        <b class="is-visible">creating</b>
-        <b>programming</b>
-        <b>developing</b>
+        <b class="is-visible">스누라이언에 오신것을</b>
+        <b>환영합니다</b>
+        <b>오늘도 즐겁게 코딩!</b>
       </span>
     </h1>
   </div>
@@ -51,8 +51,8 @@
   <div class="container">
     <h2 class="header text_b">한일들 </h2>
     <div class="row">
-      <div class="slider">
-        <ul class="slides">
+      <div class="slider" style="height: 600px;">
+        <ul class="slides" style="height: 500px;">
           <% [1,2,3,4,10].each do |item| %>
             <li>
               <img src="<%= asset_path('history'+item.to_s+'.png') %>">
@@ -131,5 +131,8 @@ $(document).ready(function(){
     $('.slider').slider({full_width: true});
     $('.carousel').carousel();
     $('.parallax').parallax();
+    $('.slider').css("height", "600px");
+    $('.slides').css("height", "500px");
+  
 });
 </script>
