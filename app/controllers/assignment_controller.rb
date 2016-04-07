@@ -19,8 +19,11 @@ class AssignmentController < ApplicationController
   end
 
   def board
+    if(params[:title]==nil || params[:title]=="")
      @test_assigntitle= AssignmentTitle.where(name: "Codecademy 1").take
-
+   else
+     @test_assigntitle= AssignmentTitle.where(name: params[:title]).take
+    end
   end
   
   def get_info
@@ -40,7 +43,13 @@ class AssignmentController < ApplicationController
       imgs << item.img.to_s
     end
     respond_to do |format|
-      format.json { render json: {assign: title.assignments, user: userss, img: imgs}}
+      format.json { render json: {assign: title.assignments, user: userss, img: imgs,user_id: current_user.id}}
     end
+  end
+  def assign_delete
+      @id=params[:value].to_i
+      Assignment.find(@id).destroy
+      @title=params[:title].to_s
+      redirect_to "/assignment/board?title=#{params[:title]}"
   end
 end

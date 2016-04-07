@@ -18,8 +18,11 @@
                         <h1><%= assign.user_assignments.find_by(submition: true).user.name%></h1>
                         <p><%= assign.comment %></p>
                         <a href="<%= asset_path(assign.img) %>" class="fancybox"><img src="<%= asset_path(assign.img) %>"></a>
-                        <a style="font-size:50%"href="<%=assign.git_url%>"><%=assign.git_url%></a>
-                    </div>
+                        <a style="font-size:50%"href="<%=assign.git_url%>"><%=assign.git_url%></a><br>
+                        <% if current_user.id==1 || current_user.id==assign.user_assignments.find_by(submition: true).user.id%>
+                        <a href="/assignment/assign_delete?value=<%= assign.id%>&title=<%=assign.title%>" style="text_align:center;">삭제</a>
+                        <% end %>
+                      </div>
               <% end %>
         </div>
       </div>
@@ -43,7 +46,23 @@
         $('#assign_description').text(data.desc);
 
         for(i=0; i<data.assign.length; i++) {
-        $('#columns').append('<div class="pin">' +'<h1>'+data.user[i].name+'</h1>'+'<p>'+data.assign[i].comment+'</p>'+'<a href="'+data.img[i]+'" class="fancybox"><img src="'+data.img[i]+'"></a>'+'<a style="font-size:50%"href="'+data.assign[i].git_url+'">'+data.assign[i].git_url+'</a>'+'</div>');
+        if(data.user_id==1 ||data.user[i].id==data.user_id){
+        $('#columns').append('<div class="pin"><h1>'+data.user[i].name+'</h1><p>'+
+                          data.assign[i].comment+'</p>'+'<a href="'+data.img[i]+
+                          '" class="fancybox"><img src="'+data.img[i]+
+                          '"></a>'+'<a style="font-size:50%"href="'+
+                          data.assign[i].git_url+'">'+data.assign[i].git_url+
+                          '</a><br><a href="/assignment/assign_delete?value='+
+                          data.assign[i].id+'&title='+data.assign[i].title+'">삭제</a></div>');
+        }
+        else{
+          $('#columns').append('<div class="pin"><h1>'+data.user[i].name+'</h1><p>'+
+                          data.assign[i].comment+'</p>'+'<a href="'+data.img[i]+
+                          '" class="fancybox"><img src="'+data.img[i]+
+                          '"></a>'+'<a style="font-size:50%"href="'+
+                          data.assign[i].git_url+'">'+data.assign[i].git_url+
+                          '</a><br></div>');
+        }
         }
       },
       error: function(){
