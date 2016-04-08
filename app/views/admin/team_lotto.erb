@@ -14,8 +14,11 @@
         </table>
       </div>
     </div>
-    <div class="col s12 center">
-      <button id="lotto_btn" class="btn snu_color">뽑기</button>
+    <div class="col s12 center input-field">
+      <div id="week_div" style="width: 20%; margin: auto;">
+        <%= number_field_tag "week", nil, placeholder: "주차를 입력하세요", value: @this_week %>
+      </div>
+      <button id="lotto_btn" class="btn blue">뽑기</button>
     </div>
   </div>
 </div>
@@ -25,6 +28,9 @@ $(document).ready(function(){
     $.ajax({
       url: "/admin/team_lotto_proc",
       dataType: "json",
+      data: {
+        week: $('#week').val()
+      },
       success: function(data){
         $.count_down = function() {
           setTimeout(function(){
