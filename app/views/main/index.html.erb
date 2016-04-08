@@ -1,4 +1,4 @@
-<div class="section no-pad-bot" id="index-banner">
+<div class="section no-pad-bot" id="index-banner" style="background-image: url(<%= asset_path('main_image.jpg')%>); background-size: 100% 100%">
   <div class="container">
     <h1 class="text_h center header cd-headline letters type">
       <br class="hide-on-large-only">
@@ -11,7 +11,7 @@
   </div>
 </div>
 
-<div id="intro" class="section scrollspy">
+<div id="intro" class="section scrollspy" style="padding-top : 5rem; padding-bottom: 5rem;">
   <div class="container">
     <div class="row">
       <div  class="col s12">
@@ -44,12 +44,12 @@
   </div>
 </div>
 
-<div class="wow" style="background-image: url('<%= asset_path('middle_background_image.jpg') %>')">
-  <p id="title2">멋쟁이 사자처럼 at SNU</p>
-</div>
 <div class="section scrollspy" id="history">
-  <div class="container">
-    <h2 class="header text_b">한일들 </h2>
+  <div class="wow" style="background-image: url('<%= asset_path('middle_background_image.jpg') %>')">
+    <p id="title2">HISTORY</p>
+    <p style="text-align: center; font-size:2rem; margin-top:0rem"> 2015년 여름의 스누라이언</p>
+  </div>
+  <div class="container"style="padding-top : 5rem; padding-bottom: 5rem;">
     <div class="row">
       <div class="slider" style="height: 600px;">
         <ul class="slides" style="height: 500px;">
@@ -64,9 +64,12 @@
   </div>
 </div>
 
-<div class="section scrollspy" id="work">
-  <div class="container">
-    <h2 class="header text_b">만든 서비스 </h2>
+<div class="section scrollspy"id="work">
+  <div class="wow" style="background-image: url('<%= asset_path('middle_background_image.jpg') %>')">
+    <p id="title2">WORKS</p>
+    <p style="text-align: center; font-size:2rem; margin-top:0rem"> 스누라이언의 작품들</p>
+  </div>
+  <div class="container" style="padding-top : 5rem; padding-bottom: 5rem;">
     <div class="row" style="margin: 3rem 0;">
       <div class="col s12 l6" style="margin: 1rem 0;">
         <a href="http://www.danspot.kr" target="_blank" class="portfolio-box center">
@@ -105,19 +108,25 @@
 </div>
 
 <div class="section scrollspy" id="schedule">
-  <div class="container">
-    <h2 class="header text_b">주요 일정 </h2>
+  <div class="wow" style="background-image: url('<%= asset_path('middle_background_image.jpg') %>')">
+    <p id="title2">SCHEDULE</p>
+    <p style="text-align: center; font-size:2rem; margin-top:0rem"> 2016년 새로운 스누라이언을 찾는 여정</p>
+  </div>
+  <div class="container" style="padding-top : 5rem; padding-bottom: 5rem;">
     <div class="row">
       <div class="col s12">
-        <img class="responsive-img" src="<%= asset_path('schedule4.png') %>">
+        <img class="responsive-img" src="<%= asset_path('schedule2_blue.png') %>">
       </div>
     </div>
   </div>
 </div>
 
 <div class="section scrollspy" id="member">
-  <div class="container">
-    <h2 class="header text_b">구성원 </h2>
+  <div class="wow" style="background-image: url('<%= asset_path('middle_background_image.jpg') %>')">
+    <p id="title2">MEMBER</p>
+    <p style="text-align: center; font-size:2rem; margin-top:0rem"> 2016년의 스누라이언</p>
+  </div>
+  <div class="container" style="padding-top : 5rem; padding-bottom: 5rem;"
     <div class="row">
       <div class="col s12">
         <img class="responsive-img" src="<%= asset_path('admin_image3.png') %>">
@@ -132,7 +141,7 @@ $(document).ready(function(){
     $('.carousel').carousel();
     $('.parallax').parallax();
     $('.slider').css("height", "600px");
-    $('.slides').css("height", "500px");
+    $('.slides').css("height", "90%");
   
 });
 </script>

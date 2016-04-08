@@ -37,37 +37,38 @@
           <% if current_user.is_admin %>
             <li><a href="/admin/index">ADMIN</a></li>
           <% end %>
-          <li><a href="/assignment/index">SUMIT</a></li>
-          <li><a href="/assignment/board">ASSIGNMENT</a></li>
+          <li><a href="/assignment/index">ASSIGNMENT</a></li>
+          <li><a href="/assignment/board">SUBMISSION</a></li>
           <li><a href="/ranking/rank">RANKING</a></li>
           <li><a href="/money/money_check">MONEY</a></li>
-          <li><%= link_to "로그아웃", destroy_user_session_path, method: "delete" %></li>
+          <li><%= link_to "LOGOUT", destroy_user_session_path, method: "delete" %></li>
         <% else %>
           <li><a href="#intro">INTRO</a></li>
-          <li><a href="#history">WORKS</a></li>
-          <li><a href="#work">SERVICE</a></li>
+          <li><a href="#history">HISTORY</a></li>
+          <li><a href="#work">WORKS</a></li>
           <li><a href="#schedule">SCHEDULE</a></a></li>
           <li><a href="#member">MEMBER</a></li>
-          <li><%= link_to "로그인", new_user_session_path %></li>
+          <li><%= link_to "LOGIN", new_user_session_path %></li>
         <% end %>
       </ul>
       <ul id="nav-mobile" class="side-nav">
-        <li><a href="#intro">소개</a></li>
-        <li><a href="#history">한 일들</a></li>
-        <li><a href="#wrok">만든 서비스</a></li>
-        <li><a href="#schedule">주요일정</a></li>
-        <li><a href="#member">구성원</a></li>
+
         <% if user_signed_in? %>
           <% if current_user.is_admin %>
-            <li><a href="/admin/index">관리자</a></li>
+            <li><a href="/admin/index">ADMIN</a></li>
           <% end %>
-          <li><a href="/assignment/index">과제 제출</a></li>
-          <li><a href="/assignment/board">과제 현황</a></li>
-          <li><a href="/ranking/rank">랭킹</a></li>
-          <li><a href="/money/money_check">회계 페이지</a></li>
-          <li><%= link_to "로그아웃", destroy_user_session_path, method: "delete" %></li>
+          <li><a href="/assignment/index">ASSIGNMENT</a></li>
+          <li><a href="/assignment/board">SUBMISSION</a></li>
+          <li><a href="/ranking/rank">RANKING</a></li>
+          <li><a href="/money/money_check">MONEY</a></li>
+          <li><%= link_to "LOGOUT", destroy_user_session_path, method: "delete" %></li>
         <% else %>
-          <li><%= link_to "로그인", new_user_session_path %></li>
+          <li><a href="#intro">INTRO</a></a></li>
+          <li><a href="#history">HISTORY</a></li>
+          <li><a href="#work">WORKS</a></li>
+          <li><a href="#schedule">SCHEDULE</a></a></li>
+          <li><a href="#member">MEMBER</a></li>
+          <li><%= link_to "LOGIN", new_user_session_path %></li>
         <% end %>
       </ul>
       <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
