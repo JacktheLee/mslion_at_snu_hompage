@@ -4,7 +4,7 @@ class Snulion
   end
   def self.make_team(member_number)
     result = []
-    remnant = @student_member
+    remnant = @student_member << "이재성"
     while remnant.count > 0
       team = remnant.sample(member_number)
       result << team
