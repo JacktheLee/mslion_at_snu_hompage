@@ -15,11 +15,13 @@ class AdminController < ApplicationController
   end
 
   def team_lotto
+    @this_week = if Team.last then Team.last.week + 1 else 0 end
   end
 
   def team_lotto_proc
     teams = Snulion.make_team(4)
-    week = if Team.last then Team.last.week + 1 else 0 end
+    week = params[:week].to_i
+    Team.where(week: week).map { |item| item.destroy }
     teams.each_with_index do |item, i|
       team = Team.create(team_number: i, week: week)
       item.each do |name|

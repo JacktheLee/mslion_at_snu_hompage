@@ -13,17 +13,17 @@
     <div class="col s12">
       <div id="wrapper">
         <div id="columns">
-              <% @test_assigntitle.assignments.each do |assign| %>
-                    <div class="pin">
-                        <h1><%= assign.user_assignments.find_by(submition: true).user.name%></h1>
-                        <p><%= assign.comment %></p>
-                        <a href="<%= asset_path(assign.img) %>" class="fancybox"><img src="<%= asset_path(assign.img) %>"></a>
-                        <a style="font-size:50%"href="<%=assign.git_url%>"><%=assign.git_url%></a><br>
-                        <% if current_user.id==1 || current_user.id==assign.user_assignments.find_by(submition: true).user.id%>
-                        <a href="/assignment/assign_delete?value=<%= assign.id%>&title=<%=assign.title%>" style="text_align:center;">삭제</a>
-                        <% end %>
-                      </div>
+          <% @test_assigntitle.assignments.each do |assign| %>
+            <div class="pin">
+              <h1><%= assign.users.where(user_assignments: {submition: true}).take.name%></h1>
+              <p><%= assign.comment %></p>
+              <a href="<%= asset_path(assign.img) %>" class="fancybox"><img src="<%= asset_path(assign.img) %>"></a>
+              <a style="font-size:50%"href="<%=assign.git_url%>"><%=assign.git_url%></a><br>
+              <% if current_user.id==1 || current_user.id==assign.user_assignments.find_by(submition: true).user.id%>
+              <a href="/assignment/assign_delete?value=<%= assign.id%>&title=<%=assign.title%>" style="text_align:center;">삭제</a>
               <% end %>
+            </div>
+          <% end %>
         </div>
       </div>
     </div>
