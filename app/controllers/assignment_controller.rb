@@ -20,8 +20,8 @@ class AssignmentController < ApplicationController
 
   def board
     if(params[:title]==nil || params[:title]=="")
-     @test_assigntitle= AssignmentTitle.where(name: "Codecademy 1").take
-   else
+     @test_assigntitle= AssignmentTitle.first
+    else
      @test_assigntitle= AssignmentTitle.where(name: params[:title]).take
     end
   end
