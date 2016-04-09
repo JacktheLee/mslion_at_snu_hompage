@@ -20,7 +20,7 @@ class AssignmentController < ApplicationController
 
   def board
     if(params[:title]==nil || params[:title]=="")
-     @test_assigntitle= AssignmentTitle.first
+     @test_assigntitle= AssignmentTitle.last
     else
      @test_assigntitle= AssignmentTitle.where(name: params[:title]).take
     end
