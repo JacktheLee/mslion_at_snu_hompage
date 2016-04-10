@@ -37,19 +37,56 @@ class AssignmentController < ApplicationController
     title = AssignmentTitle.where(name: params[:title]).take
     imgs=[]
     assigns=title.assignments
-    userss = []
+    users = []
+    like=[]
+    like_sum=[]
     assigns.each do |item|
-      userss << item.users.where(user_assignments: {submition: true}).take
+      if item.user_assignments.where(user_id: current_user.id).take==nil
+        like << false
+      else
+        like << item.user_assignments.where(user_id: current_user.id).take.likbtn
+      end
+      users << item.users.where(user_assignments: {submition: true}).take
       imgs << item.img.to_s
+      like_sum << liksum(item)
     end
     respond_to do |format|
-      format.json { render json: {assign: title.assignments, user: userss, img: imgs,user_id: current_user.id}}
+      format.json { render json: {assign: assigns, user: users, img: imgs,user_id: current_user.id, likes: like, sum: like_sum}}
     end
   end
+  
   def assign_delete
       @id=params[:value].to_i
       Assignment.find(@id).destroy
       @title=params[:title].to_s
       redirect_to "/assignment/board?title=#{params[:title]}"
   end
+  
+  def like_btn
+    @like=0
+    id=params[:assign_id].to_i
+    assign=Assignment.find(id)
+    if assign.user_assignments.where(user_id: current_user.id).take==nil
+    UserAssignment.create(user: current_user, assignment: assign, submition: false, likbtn: params[:like])
+    end
+    
+    user_assignment=assign.user_assignments.where(user_id: current_user.id).take
+    user_assignment.update(likbtn: params[:like])
+   
+    
+    respond_to do |format|
+      format.json{render json:{user_assign: user_assignment, like_sum: liksum(assign)}}
+    end
+  end
+  private
+  def liksum(assign)
+    like=0
+    assign.user_assignments.each do |user_assign|
+                  if assign.user_assignments.where(user_id: user_assign.user_id).take.likbtn
+                    like+=1 
+                  end
+    end
+    return like
+  end
+  
 end
