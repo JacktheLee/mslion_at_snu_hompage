@@ -2,7 +2,15 @@
   <% if params[:submit] == "true" %>
   <div class="row">
     <h3>성공적으로 제출되었습니다</h3>
+    <% if current_user.name=="운영진"%>
     <img src="<%= asset_path("정은지 사진")%>">
+    <% elsif current_user.name=="송재윤" || current_user.name=="윤현영" || current_user.name=="송기서" || current_user.name=="김근영"%>
+    <img src="<%= asset_path("고양이")%>">
+    <% elsif current_user.name=="이상진"%>
+    <img src="<%= asset_path("진구")%>">
+    <% else %>
+    <img src="<%= asset_path("설현1")%>">
+    <% end %>
   </div>
   <% else %>
   <h1>과제 제출</h1>

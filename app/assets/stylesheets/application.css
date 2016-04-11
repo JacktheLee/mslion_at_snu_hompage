@@ -31,7 +31,7 @@ body {
 
 .brand-logo {
   width: inherit;
-  max-width: 20%;
+  min-width: 15%;
   height: 40px;
   position: absolute;
   top: 10px;
@@ -41,6 +41,7 @@ body {
 h2 {
   font-size: auto;
   }
+  
 .logo_image {
   width: inherit;
   max-width: 25%;
@@ -51,6 +52,7 @@ h2 {
   margin: 5px 0 -10px 0;
   text-align: center;
 }
+
 
 nav ul a:hover, a:active{
   transition: background-color .3s;
@@ -70,13 +72,57 @@ nav ul a:hover, a:active{
   color: black !important;
 }
 
-#intro,#work,#team{padding-top:4rem}#index-banner{min-height:632px;max-height:864px;position:relative;background-color:#FFFFFFF}#nav_f{box-shadow:none !important;-webkit-box-shadow:none !important}.brand-logo{position:absolute;color:#fff;display:inline-block;font-size:2.1rem;font-style:normal;font-weight:100;padding:0;letter-spacing:7px}.text_h2{font-weight:100;margin-bottom:4%;line-height:4.5rem;color:black;}.span_h2{font-weight:300;color:rgb(85,105,200)}.text_b{color:rgb(143,170,220)}.in{font-weight:400 !important;font-style:normal !important}.promo i{color:rgb(143,170,220);font-size:7rem;display:block}#schedule,#apply{background:#FFFFFF}nav ul a{letter-spacing: 0px !important;font-size:1rem;color:#091971;letter-spacing:2px;display:block;font-weight:300;padding:0px 15px}.cd-headline.type .cd-words-wrapper{vertical-align:top;overflow:hidden}.cd-headline.type .cd-words-wrapper::after{content:'';position:absolute;right:0;top:50%;bottom:auto;-webkit-transform:translateY(-50%);-moz-transform:translateY(-50%);-ms-transform:translateY(-50%);-o-transform:translateY(-50%);transform:translateY(-50%);height:90%;width:1px;background-color:#aebcb9}.cd-headline.type .cd-words-wrapper.waiting::after{-webkit-animation:cd-pulse 1s infinite;-moz-animation:cd-pulse 1s infinite;animation:cd-pulse 1s infinite}.cd-headline.type .cd-words-wrapper.selected{}.cd-headline.type .cd-words-wrapper.selected::after{visibility:hidden}.cd-headline.type .cd-words-wrapper.selected b{color:#fff}.cd-headline.type b{visibility:hidden}.cd-headline.type b.is-visible{visibility:visible}.cd-headline.type i{position:absolute;visibility:hidden}.cd-headline.type
-i.in{position:relative;visibility:visible}#preloader{position:fixed;top:0;left:0;right:0;bottom:0;background-color:#fff;z-index:1200}
+#intro,#work,#team{
+  padding-top:4rem;
+}
+
+#index-banner{
+  min-height:632px;
+  max-height:864px;
+  position:relative;
+  background-size: cover;
+}
+#nav_f{
+  box-shadow:none !important;
+  -webkit-box-shadow:none !important
+}
+.brand-logo{
+  position:absolute;color:#fff;display:
+  inline-block;font-size:2.1rem;
+  font-style:normal;
+  font-weight:100;
+  padding:0;
+  letter-spacing:7px;
+}
+.text_h2{font-weight:100;font-size:5.5vw;margin-bottom:4%;line-height:7vw;color:black;}
+.span_h2{font-weight:300;color:rgb(85,105,200)}
+.text_b{color:rgb(143,170,220)}.in{font-weight:400 !important;font-style:normal !important}
+.promo i{color:rgb(143,170,220);font-size:7rem;display:block}
+#schedule,#apply{background:#FFFFFF}
+nav ul a{letter-spacing: 0px !important; font-size:1rem; color:#091971 !important; display:block;font-weight:300;padding:0px 15px}
+.cd-headline.type .cd-words-wrapper{vertical-align:top;overflow:hidden}
+.cd-headline.type .cd-words-wrapper::after{content:'';position:absolute;right:0;top:50%;bottom:auto;-webkit-transform:translateY(-50%);-moz-transform:translateY(-50%);-ms-transform:translateY(-50%);-o-transform:translateY(-50%);transform:translateY(-50%);height:90%;width:1px;background-color:#aebcb9}
+.cd-headline.type .cd-words-wrapper.waiting::after{-webkit-animation:cd-pulse 1s infinite;-moz-animation:cd-pulse 1s infinite;aanimation:cd-pulse 1s infinite}
+.cd-headline.type .cd-words-wrapper.selected{}
+.cd-headline.type .cd-words-wrapper.selected::after{visibility:hidden}
+.cd-headline.type .cd-words-wrapper.selected b{color:#fff}
+.cd-headline.type b{visibility:hidden}
+.cd-headline.type b.is-visible{visibility:visible}
+.cd-headline.type i{position:absolute;visibility:hidden}
+.cd-headline.type i.in{position:relative;visibility:visible}
+#preloader{position:fixed;top:0;left:0;right:0;bottom:0;background-color:#fff;z-index:1200}
 
 .slider .indicators .indicator-item.active {
   background-color: #153888;
 }
-.portfolio-box{display:block;position:relative;margin:0 auto;}.portfolio-box .portfolio-box-caption{display:block;position:absolute;bottom:0;width:100%;height:100%;text-align:center;color:#fff;opacity:0;background:rgba(0,0,0,0.75);-webkit-transition:all .35s;transition:all .35s}.portfolio-box .portfolio-box-caption .portfolio-box-caption-content{position:absolute;top:50%;width:100%;text-align:center;-webkit-transform:translateY(-50%);transform:translateY(-50%)}.portfolio-box .portfolio-box-caption .portfolio-box-caption-content .project-category,.portfolio-box .portfolio-box-caption .portfolio-box-caption-content .project-name{padding:0 15px;font-family:'Roboto','Noto-Sans','Helvetica Neue',Arial,sans-serif}.portfolio-box .portfolio-box-caption .portfolio-box-caption-content .project-category{text-transform:uppercase;font-size:14px;font-weight:600}.portfolio-box .portfolio-box-caption .portfolio-box-caption-content .project-name{font-size:18px}.portfolio-box:hover .portfolio-box-caption{opacity:1}@media (min-width: 768px){.portfolio-box .portfolio-box-caption .portfolio-box-caption-content .project-category{font-size:16px}.portfolio-box .portfolio-box-caption .portfolio-box-caption-content .project-name{font-size:30px}}
+.portfolio-box{display:block;position:relative;margin:0 auto;}
+.portfolio-box .portfolio-box-caption{display:block;position:absolute;bottom:0;width:100%;height:100%;text-align:center;color:#fff;opacity:0;background:rgba(0,0,0,0.75);-webkit-transition:all .35s;transition:all .35s}
+.portfolio-box .portfolio-box-caption .portfolio-box-caption-content{position:absolute;top:50%;width:100%;text-align:center;-webkit-transform:translateY(-50%);transform:translateY(-50%)}
+.portfolio-box .portfolio-box-caption .portfolio-box-caption-content .project-category,.portfolio-box .portfolio-box-caption .portfolio-box-caption-content .project-name{padding:0 15px;font-family:'Roboto','Noto-Sans','Helvetica Neue',Arial,sans-serif}
+.portfolio-box .portfolio-box-caption .portfolio-box-caption-content .project-category{text-transform:uppercase;font-size:14px;font-weight:600}
+.portfolio-box .portfolio-box-caption .portfolio-box-caption-content .project-name{font-size:18px}
+.portfolio-box:hover .portfolio-box-caption{opacity:1}
+@media (min-width: 768px){.portfolio-box .portfolio-box-caption .portfolio-box-caption-content .project-category{font-size:16px}.portfolio-box .portfolio-box-caption .portfolio-box-caption-content .project-name{font-size:30px}}
 #operators .portfolio-box .portfolio-box-caption{border-radius:50%;}
 
 .apply_btn {
@@ -108,11 +154,12 @@ i.in{position:relative;visibility:visible}#preloader{position:fixed;top:0;left:0
 }
 
 #title2{
-  margin-top: 2rem;
-  font-size: 6vw;
+  margin-top: 3.5rem;
+  font-size: 10vw;
   text-align: center;
   margin-bottom: 0rem;
 }
+
 footer.page-footer {
   margin-top: 0;
   background-color: rgb(143,170,220);
@@ -127,23 +174,32 @@ footer.page-footer {
     background-size: cover;
 }
 
-@media only screen and (max-device-width : 480px) {
-/* Styles */
+/*@media only screen and (max-device-width : 480px) {
+/* Styles
     .text_h{
         padding: 15% 0;
         font-size: 3.0em;
         font-weight: 100;
         color: rgb(9, 25, 113);
     }
-}
-@media only screen and (min-width : 1224px) {
+}*/
+@media only screen and (min-width : 0px) {
 /* Styles */
     .text_h{
-            padding: 15% 0;
-            font-size: 5.0em;
+            padding: 20% 0;
+            font-size: 11vw;
             font-weight: 100;
             color: #FFFFFF;
     }
+}
+
+
+@media only screen and (max-width : 425px) {
+ /*Styles*/
+  #title2{  
+      margin-top: 5rem;
+}
+  }
 }
 
 .select-wrapper input.select-dropdown{
@@ -152,6 +208,7 @@ footer.page-footer {
 button, input, optgroup, select, textarea{
       color: #091971;
 }
+
 #wrapper {
 	width: 90%;
 	max-width: 1100px;
@@ -233,3 +290,20 @@ button, input, optgroup, select, textarea{
     text-align: center;
     font-size: 200%;
  }
+
+.mdi-navigation-menu:before {
+    color: #091971;
+}
+
+.title_sub{
+    text-align: center;
+    font-size: 5vw;
+    margin-top: 0rem;
+}
+
+.slider .slides li img {
+    height: 100%;
+    width: 100%;
+    background-size: 100%;
+    background-position: center;
+}

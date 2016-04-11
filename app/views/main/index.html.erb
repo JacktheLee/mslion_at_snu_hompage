@@ -1,43 +1,45 @@
-<div class="section no-pad-bot" id="index-banner" style="background-image: url(<%= asset_path('main_image.jpg')%>); background-size: 100% 100%">
+<div class="section no-pad-bot" id="index-banner" style="background-image: url(<%= asset_path('main_image.jpg')%>);">
   <div class="container">
     <h1 class="text_h center header cd-headline letters type">
-      <br class="hide-on-large-only">
-      <span class="cd-words-wrapper waiting">
-        <b class="is-visible">스누라이언에 오신것을</b>
-        <b>환영합니다</b>
-        <b>오늘도 즐겁게 코딩!</b>
+      <span class="cd-words-wrapper waiting" id="mobile_typing">
+        <b class="is-visible">스누라이언</b>
+        <b>오늘도 성공적</b>
       </span>
     </h1>
   </div>
 </div>
 
 <div id="intro" class="section scrollspy">
-  <div class="container">
+  <div class="container-fluid">
     <div class="row">
       <div  class="col s12">
-        <h2 class="center header text_h2"> <span class="span_h2">기술적 장벽</span> 때문에 본인의 생각을<br> <span class="span_h2">세상 밖으로</span> 표현하지 못하신 분들을 위한<br><span class="span_h2">프로그래밍 교육 동아리</span> </h2>
+        <h2 class="center header text_h2"> <span class="span_h2">기술적 장벽</span> 때문에 본인의 생각을<br> <span class="span_h2">세상에</span> 표현하지 못하신 분들을 위한<br><span class="span_h2">웹개발 동아리</span> </h2>
       </div>
-      <div  class="col s12 m4 l4">
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col s12 m4 l4">
         <div class="center promo promo-example">
           <i class="material-icons">desktop_windows</i>
-          <h5 class="promo-caption">웹 프로그래밍을 배웁니다</h5>
+          <h5 class="promo-caption">웹 프로그래밍을 <br> 배웁니다</h5>
           <p class="light center">
-          웹 서비스를 이루고 있는 프론트앤드(HTML/CSS, js)와 백앤드(RoR)를 만드는 법을 배웁니다<br>
+          웹 서비스의 Front-End(HTML/CSS, js)와 <br> Back-End(RoR)를 다루는 법을 배웁니다<br>
           </p>
         </div>
       </div>
       <div class="col s12 m4 l4">
         <div class="center promo promo-example">
           <i class="material-icons">lightbulb_outline</i>
-          <h5 class="promo-caption">생각을 실현합니다</h5>
-          <p class="light center">꿈꿔왔던 자신만의 웹 서비스를 스스로 만들 수 있게 됩니다</p>
+          <h5 class="promo-caption">생각을 <br> 실현합니다</h5>
+          <p class="light center">꿈꿔왔던 자신만의 웹 서비스를 <br> 스스로 만들 수 있게 됩니다</p>
         </div>
       </div>
       <div class="col s12 m4 l4">
         <div class="center promo promo-example">
           <i class="material-icons">people</i>
-          <h5 class="promo-caption">값진 기회를 경험합니다</h5>
-          <p class="light center">창업, 스타트업 관련 경험을 하고 관련된 사람들과 소통할 수 있는 기회를 얻을 수 있습니다</p>
+          <h5 class="promo-caption">값진 기회를 <br> 경험합니다</h5>
+          <p class="light center">창업, 스타트업 관련된 경험은 물론, <br> 관심사를 공유하는 기회를 얻을 수 있습니다</p>
         </div>
       </div>
     </div>
@@ -47,11 +49,11 @@
 <div class="section scrollspy" id="history">
   <div class="wow" style="background-image: url('<%= asset_path('middle_background_image.jpg') %>')">
     <p id="title2">HISTORY</p>
-    <p style="text-align: center; font-size:2rem; margin-top:0rem"> 2015년 여름의 스누라이언</p>
+    <p class="title_sub"> 2015년 여름의 스누라이언</p>
   </div>
   <div class="container"style="padding-top : 5rem; padding-bottom: 5rem;">
     <div class="row">
-      <div class="slider" style="height: 600px;">
+      <div class="slider">
         <ul class="slides" style="height: 500px;">
           <% [1,2,3,4,10].each do |item| %>
             <li>
@@ -67,7 +69,7 @@
 <div class="section scrollspy"id="work">
   <div class="wow" style="background-image: url('<%= asset_path('middle_background_image.jpg') %>')">
     <p id="title2">WORKS</p>
-    <p style="text-align: center; font-size:2rem; margin-top:0rem"> 스누라이언의 작품들</p>
+    <p class="title_sub"> 스누라이언의 작품들</p>
   </div>
   <div class="container" style="padding-top : 5rem; padding-bottom: 5rem;">
     <div class="row" style="margin: 3rem 0;">
@@ -110,7 +112,7 @@
 <div class="section scrollspy" id="schedule">
   <div class="wow" style="background-image: url('<%= asset_path('middle_background_image.jpg') %>')">
     <p id="title2">SCHEDULE</p>
-    <p style="text-align: center; font-size:2rem; margin-top:0rem"> 2016년 새로운 스누라이언을 찾는 여정</p>
+    <p class="title_sub"> 2016년 새로운 스누라이언을 찾는 여정</p>
   </div>
   <div class="container" style="padding-top : 5rem; padding-bottom: 5rem;">
     <div class="row">
@@ -124,7 +126,7 @@
 <div class="section scrollspy" id="member">
   <div class="wow" style="background-image: url('<%= asset_path('middle_background_image.jpg') %>')">
     <p id="title2">MEMBER</p>
-    <p style="text-align: center; font-size:2rem; margin-top:0rem"> 2016년의 스누라이언 운영진</p>
+    <p class="title_sub"> 2016년의 스누라이언 운영진</p>
   </div>
   <div class="container" style="padding-top : 5rem; padding-bottom: 5rem;"
     <div class="row">
@@ -140,8 +142,8 @@ $(document).ready(function(){
     $('.slider').slider({full_width: true});
     $('.carousel').carousel();
     $('.parallax').parallax();
-    $('.slider').css("height", "600px");
-    $('.slides').css("height", "90%");
+    $('.slider').css("height", "400px");
+    $('.slides').css("background-size", "100%");
   
 });
 </script>
