@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   get 'assignment/index'
 
   get 'money/money_check'
+  get 'idea/idea'
   devise_for :users, controllers: {
     registrations: "user/registrations"
   }
