@@ -126,13 +126,25 @@
 <div class="section scrollspy" id="member">
   <div class="wow" style="background-image: url('<%= asset_path('middle_background_image.jpg') %>')">
     <p id="title2">MEMBER</p>
-    <p class="title_sub"> 2016년의 스누라이언 운영진</p>
+    <p class="title_sub"> 2016년의 스누라이언들</p>
   </div>
-  <div class="container" style="padding-top : 5rem; padding-bottom: 5rem;"
+  <div class="container" style="padding-top : 5rem; padding-bottom: 5rem;">
     <div class="row">
-      <div class="col s12">
-        <img class="responsive-img" src="<%= asset_path('admin_image3.png') %>">
-      </div>
+      <% member = Snulion.get_member - ["이상진"] %>
+      <% member.each do |m| %>
+        <div class="col m4 s6">
+          <a target="_blank" class="portfolio-box center">
+            <img src="<%= asset_path(m+'.png') %>" class="responsive-img center" alt="">
+            <div class="portfolio-box-caption">
+              <div class="portfolio-box-caption-content">
+                <div class="project-name">
+                  <%= m %>
+                </div>
+              </div>
+            </div>
+          </a>
+        </div>
+      <% end %>
     </div>
   </div>
 </div>
