@@ -12,6 +12,7 @@ class AdminController < ApplicationController
   def set_assignment_proc
     AssignmentTitle.create(name: params[:name], description: params[:description])
     redirect_to "/admin/index"
+    request.env['mobvious.device_type']
   end
 
   def team_lotto
