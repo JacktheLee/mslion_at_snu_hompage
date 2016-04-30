@@ -130,8 +130,7 @@
   </div>
   <div class="container" style="padding-top : 5rem; padding-bottom: 5rem;">
     <div class="row">
-      <% member = Snulion.get_member - ["이상진"] %>
-      <% member.each do |m| %>
+      <% Snulion.get_member.each do |m| %>
         <div class="col m4 s6">
           <a target="_blank" class="portfolio-box center">
             <img src="<%= asset_path(m+'.png') %>" class="responsive-img center" alt="">
