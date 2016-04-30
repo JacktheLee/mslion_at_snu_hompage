@@ -21,7 +21,7 @@ $.append_result = function(data){
     $('#list_body').append('<br><br>');
   };
   $('#list_body').append('<h4 id="end" style="display: none;" center>끝</h4>');
-  var roulette = $.roulette_effect(["김경도","김권봉","김근영","김태완","박승환","서동욱","서수빈","손병찬","송기서","송재윤","유진영","윤현영","이상진","이현민","임정건"])
+  var roulette = $.roulette_effect(["김경도","김권봉","김근영","김태완","박승환","서동욱","서수빈","손병찬","송기서","송재윤","유진영","윤현영","이현민","임정건"])
   $.show_result(0,data,roulette);
 };
 
