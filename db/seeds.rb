@@ -15,3 +15,5 @@ tels = ["41720816","33494108", "45924609", "67411367", "46552603", "35906342", "
 for i in 0..names.count
   User.create(email: emails[i], name: names[i], password: tels[i], password_confirmation: tels[i])
 end
+User.create(email: "grey_pastor@naver.com", name: "빻재성", password: "1234", password_confirmation: "1234")
+User.create(email: "grey_pastor@naver.com", name: "빻유철", password: "1234", password_confirmation: "1234")
