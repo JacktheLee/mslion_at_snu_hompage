@@ -315,3 +315,53 @@ button, input, optgroup, select, textarea{
    pointer-events: none;
    cursor: default;
 } 
+
+/* label focus color */
+.input-field input[type=text]:focus + label {
+  color: #190171;
+}
+.input-field textarea.materialize-textarea:focus + label {
+  color: #190171;
+}
+.input-field input[type=url]:focus + label {
+  color: #190171;
+}
+.input-field input[type=text]:focus {
+  border-bottom: 1px solid #190171;
+  box-shadow: 0 1px 0 0 #190171;
+}
+
+.input-field input[type=url]:focus {
+  border-bottom: 1px solid #190171;
+  box-shadow: 0 1px 0 0 #190171;
+}
+.input-field textarea.materialize-textarea:focus {
+  border-bottom: 1px solid #190171;
+  box-shadow: 0 1px 0 0 #190171;
+}
+.input.file-path.validate input[type=text].valid {
+  border-bottom: 1px solid #190171;
+  box-shadow:0 1px 0 0 #190171;
+}
+/* icon prefix focus color */
+.input-field .prefix.active{
+  color: #190171;
+}
+/* btn color #190171 */
+.btn {
+  background-color: #190171;
+  color: #fff;
+}
+.btn:hover {
+  background-color: #190171;
+  color: #fff;
+}
+/* idea_upload_btn */
+#idea_upload_btn {
+  background-color: #190171;
+  color: #fff;
+  text-align: center;
+  border-radius: 0.3rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
