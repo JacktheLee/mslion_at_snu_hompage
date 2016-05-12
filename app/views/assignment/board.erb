@@ -97,7 +97,7 @@
 
   for(i=0; i<data.assign.length; i++) {
   if(data.user_id==1 ||data.user[i].id==data.user_id){
-  $('#columns').append('<div class="card"><div class="card-image">'+'<a href="'+data.img[i]+
+  $('#columns').append('<div class="card" style="margin: 2rem;"><div class="card-image">'+'<a href="'+data.img[i]+
         '" class="fancybox"><img src="'+data.img[i]+
         '"></a>'+'<span class="card-title">'+data.user[i].name+'</span></div>'+
     '<div class="card-content"><p>'+data.assign[i].comment+'</p></div><div class="card-action">'+
@@ -109,7 +109,7 @@
         like_i[data.likes[i]]+'</p><a data-sum="'+data.sum[i]+'">'+data.sum[i]+'</a></div></div></div>');
   }
   else{
-  $('#columns').append('<div class="card"><div class="card-image">'+'<a href="'+data.img[i]+
+  $('#columns').append('<div class="card" style="margin:2rem;"><div class="card-image">'+'<a href="'+data.img[i]+
         '" class="fancybox"><img src="'+data.img[i]+
         '"></a>'+'<span class="card-title">'+data.user[i].name+'</span></div>'+
     '<div class="card-content"><p>'+data.assign[i].comment+'</p></div><div class="card-action">'+
