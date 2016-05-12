@@ -1,20 +1,17 @@
+<div class="container" style="width: 75%">
   <div class="row">
-    <%= form_tag "/assignment/submit_proc", class: "col s12", multipart: true do %>
+    <h1> 아이디어 업로드</h1>
+    <%= form_tag "/assignment/upload_proc", class: "col s12", multipart: true do %>
       <div class="row">
         <div class="input-field col s12">
-          <select id="title" name="title">
-            <option value="" disabled selected>과제를 선택하세요</option>
-            <% AssignmentTitle.all.each do |item| %>
-              <option value="<%= item.name %>"><%= item.name %></option>
-            <% end %>
-          </select>
-          <p id="assign_description"></p>
+          <input id="idea_title" name="idea_title" type="text" class="validate">
+          <label for="idea_title" style="font-size:150%;">아이디어 제목</label>
         </div>
       </div>
       <div class="row">
         <div class="col s12 file-field input-field">
           <div class="btn">
-            <span>Image</span>
+            <span>File</span>
             <input type="file" accept="image/*" name="img">
           </div>
           <div class="file-path-wrapper">
@@ -25,19 +22,21 @@
       <div class="row">
         <div class="input-field col s12">
           <input id="git_url" type="url" class="validate" name="git_url" style="font-size:150%;">
-          <label for="git_url" style="font-size:150%;">URL</label>
+          <label for="git_url" style="font-size:150%;">URL(Proto-type)</label>
         </div>
       </div>
       <div class="row">
         <div class="input-field col s12">
           <textarea id="comment" name="comment" class="materialize-textarea" style="padding: 1rem 0; font-size:150%;"></textarea>
-          <label for="comment" style="font-size:150%;">설명</label>
+          <label for="comment" style="font-size:150%;">아이디어 설명</label>
         </div>
       </div>
       <div class="row">
         <div class="col s12 center" style="margin-bottom:10%;">
-          <input class="btn waves-effect waves-light" type="submit" name="action" value="Submit">
+          <input class="btn" type="submit" name="action" value="Submit">
         </div>
       </div>
     <% end %>
-    <% end %>
+  </div>
+</div>
+</div>

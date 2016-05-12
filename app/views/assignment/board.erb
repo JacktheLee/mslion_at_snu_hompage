@@ -11,28 +11,33 @@
       <p id="assign_description"></p>
     </div>
     <div class="col s12">
-      <div id="wrapper">
-        <div id="columns">
-          <% @test_assigntitle.assignments.each do |assign| %>
-            <div class="pin">
-              <h1><%= assign.users.where(user_assignments: {submition: true}).take.name%></h1>
-              <p><%= assign.comment %></p>
+      <div id="columns">
+        <% @test_assigntitle.assignments.each do |assign| %>
+
+          <div class="card" style="margin:2rem;">
+            <div class="card-image">
               <a href="<%= asset_path(assign.img) %>" class="fancybox"><img src="<%= asset_path(assign.img) %>"></a>
+              <span class="card-title"><%= assign.users.where(user_assignments: {submition: true}).take.name%></span>
+            </div>
+            <div class="card-content">
+              <p><%= assign.comment %></p>
+            </div>
+            <div class="card-action">
               <a style="font-size:50%"href="<%=assign.git_url%>"><%=assign.git_url%></a><br>
               <% if current_user.id==1 || current_user.id==assign.user_assignments.find_by(submition: true).user.id%>
-              <a href="/assignment/assign_delete?value=<%= assign.id%>&title=<%=assign.title%>" style="text_align:center;">삭제</a>
+                <a href="/assignment/assign_delete?value=<%= assign.id%>&title=<%=assign.title%>" style="text_align:center;">삭제</a>
               <% end %>
               <div class="likebtn">
                 <% if assign.user_assignments.where(user_id: current_user.id).take!=nil %>
                   <% if !assign.user_assignments.where(user_id: current_user.id).take.likbtn %>
-                  <p data-like=false data-assign="<%= assign.id%>">좋아요</p>
+                    <p data-like=false data-assign="<%= assign.id%>">좋아요</p>
                   <% else %>
-                  <p data-like=true data-assign="<%= assign.id%>">좋아요 취소</p>
+                    <p data-like=true data-assign="<%= assign.id%>">좋아요 취소</p>
                   <% end %>
                 <% else %>
                   <p data-like=false data-assign="<%= assign.id%>">좋아요</p> 
                 <% end %>
-                <!-- 좋아요 개수 새는 부분 -->
+                <!-- 좋아요 개수 세는 부분 -->
                 <% like=0 %>
                 <% assign.user_assignments.each do |user_assign| %>
                   <% if assign.user_assignments.where(user_id: user_assign.user_id).take.likbtn %>
@@ -40,111 +45,113 @@
                   <% end %>
                 <% end %>
                 <a data-sum="<%= like%>"><%= like %></a> <!-- 좋아요 갯수-->
-                </div>
+              </div>
             </div>
-          <% end %>
-        </div>
+          </div>
+        <% end %>
       </div>
     </div>
   </div>
 </div>
 <script>
   $(document).ready(function() {
-    $('.fancybox').fancybox();
-    $('select').material_select();
-    var like_i={false:"좋아요",true:"좋아요 취소"};
+  $('.fancybox').fancybox();
+  $('select').material_select();
+  var like_i={false:"좋아요",true:"좋아요 취소"};
   $('.likebtn').click(function() {
-    var thisDiv = this;
-    $.ajax({
-      url: '/assignment/like_btn',
-      dataType: 'json',
-      data: {
-        like: !$(this).find('p').data('like'),
-        assign_id: $(this).find('p').data('assign'),
-        like_sum: $(this).find('a').data('sum')
-      },
-      success: function(data){
-        $(thisDiv).empty();
-        if (!data.user_assign.likbtn){
-         $(thisDiv).append('<p data-like="'+data.user_assign.likbtn+'" data-assign="'+data.user_assign.assignment_id+'">좋아요</p>');
-         $(thisDiv).append('<a data-likesum="'+data.like_sum+'">'+data.like_sum+'</a>');
-        }
-        else{
-         $(thisDiv).append('<p data-like="'+data.user_assign.likbtn+'" data-assign="'+data.user_assign.assignment_id+'">좋아요 취소</p>');
-         $(thisDiv).append('<a data-likesum="'+data.like_sum+'">'+data.like_sum+'</a>');
-        }
-      },
-      error: function(){
-        alert("error");
-      }
-    });
+  var thisDiv = this;
+  $.ajax({
+  url: '/assignment/like_btn',
+  dataType: 'json',
+  data: {
+  like: !$(this).find('p').data('like'),
+  assign_id: $(this).find('p').data('assign'),
+  like_sum: $(this).find('a').data('sum')
+  },
+  success: function(data){
+  $(thisDiv).empty();
+  if (!data.user_assign.likbtn){
+  $(thisDiv).append('<p data-like="'+data.user_assign.likbtn+'" data-assign="'+data.user_assign.assignment_id+'">좋아요</p>');
+  $(thisDiv).append('<a data-likesum="'+data.like_sum+'">'+data.like_sum+'</a>');
+  }
+  else{
+  $(thisDiv).append('<p data-like="'+data.user_assign.likbtn+'" data-assign="'+data.user_assign.assignment_id+'">좋아요 취소</p>');
+  $(thisDiv).append('<a data-likesum="'+data.like_sum+'">'+data.like_sum+'</a>');
+  }
+  },
+  error: function(){
+  alert("error");
+  }
   });
- $('#title').change(function(){
-    $.ajax({
-      url: '/assignment/get_board_info',
-      dataType: 'json',
-      data: {
-        title: $(this).val()
-      },
-      success: function(data){
-        $("#columns").empty(); 
-        $('#assign_description').text(data.desc);
+  });
+  $('#title').change(function(){
+  $.ajax({
+  url: '/assignment/get_board_info',
+  dataType: 'json',
+  data: {
+  title: $(this).val()
+  },
+  success: function(data){
+  $("#columns").empty();
+  $('#assign_description').text(data.desc);
 
-        for(i=0; i<data.assign.length; i++) {
-        if(data.user_id==1 ||data.user[i].id==data.user_id){
-        $('#columns').append('<div class="pin"><h1>'+data.user[i].name+'</h1><p>'+
-                          data.assign[i].comment+'</p>'+'<a href="'+data.img[i]+
-                          '" class="fancybox"><img src="'+data.img[i]+
-                          '"></a>'+'<a style="font-size:50%"href="'+
-                          data.assign[i].git_url+'">'+data.assign[i].git_url+
-                          '</a><br><a href="/assignment/assign_delete?value='+
-                          data.assign[i].id+'&title='+data.assign[i].title+
-                          '">삭제</a> <div class="likebtn"><p data-like='+
-                          data.likes[i]+' data-assign="'+data.assign[i].id+'">'+
-                           like_i[data.likes[i]]+'</p><a data-sum="'+data.sum[i]+'">'+data.sum[i]+'</a></div></div>');
-        }
-        else{
-          $('#columns').append('<div class="pin"><h1>'+data.user[i].name+'</h1><p>'+
-                          data.assign[i].comment+'</p>'+'<a href="'+data.img[i]+
-                          '" class="fancybox"><img src="'+data.img[i]+
-                          '"></a>'+'<a style="font-size:50%"href="'+
-                          data.assign[i].git_url+'">'+data.assign[i].git_url+
-                          '</a><br><div class="likebtn"><p data-like='+
-                          data.likes[i]+' data-assign="'+data.assign[i].id+'">'+
-                           like_i[data.likes[i]]+'</p><a data-sum="'+data.sum[i]+'">'+data.sum[i]+'</a></div></div></div>');
-        }
-        }
-      },
-      error: function(){
-        $('#assign_description').text("에러가 발생했습니다");
-      }
-    });
+  for(i=0; i<data.assign.length; i++) {
+  if(data.user_id==1 ||data.user[i].id==data.user_id){
+  $('#columns').append('<div class="card" style="margin: 2rem;"><div class="card-image">'+'<a href="'+data.img[i]+
+        '" class="fancybox"><img src="'+data.img[i]+
+        '"></a>'+'<span class="card-title">'+data.user[i].name+'</span></div>'+
+    '<div class="card-content"><p>'+data.assign[i].comment+'</p></div><div class="card-action">'+
+      '<a style="font-size:50%"href="'+ data.assign[i].git_url+'">'+data.assign[i].git_url+
+        '</a><br><a href="/assignment/assign_delete?value='+
+        data.assign[i].id+'&title='+data.assign[i].title+
+        '">삭제</a> <div class="likebtn"><p data-like='+
+        data.likes[i]+' data-assign="'+data.assign[i].id+'">'+
+        like_i[data.likes[i]]+'</p><a data-sum="'+data.sum[i]+'">'+data.sum[i]+'</a></div></div></div>');
+  }
+  else{
+  $('#columns').append('<div class="card" style="margin:2rem;"><div class="card-image">'+'<a href="'+data.img[i]+
+        '" class="fancybox"><img src="'+data.img[i]+
+        '"></a>'+'<span class="card-title">'+data.user[i].name+'</span></div>'+
+    '<div class="card-content"><p>'+data.assign[i].comment+'</p></div><div class="card-action">'+
+      '<a style="font-size:50%"href="'+ data.assign[i].git_url+'">'+data.assign[i].git_url+
+        '</a><br><a href="/assignment/assign_delete?value='+
+        data.assign[i].id+'&title='+data.assign[i].title+
+        '">삭제</a> <div class="likebtn"><p data-like='+
+        data.likes[i]+' data-assign="'+data.assign[i].id+'">'+
+        like_i[data.likes[i]]+'</p><a data-sum="'+data.sum[i]+'">'+data.sum[i]+'</a></div></div></div>');
+  }
+  }
+  },
+  error: function(){
+  $('#assign_description').text("에러가 발생했습니다");
+  }
+  });
   });
   $("#columns").on('click', '.likebtn', function() {
-    var thisDiv = this;
-    $.ajax({
-      url: '/assignment/like_btn',
-      dataType: 'json',
-      data: {
-        like: !$(this).find('p').data('like'),
-        assign_id: $(this).find('p').data('assign'),
-        like_sum: $(this).find('a').data('sum')
-      },
-      success: function(data){
-        $(thisDiv).empty();
-        if (!data.user_assign.likbtn){
-         $(thisDiv).append('<p data-like="'+data.user_assign.likbtn+'" data-assign="'+data.user_assign.assignment_id+'">좋아요</p>');
-         $(thisDiv).append('<a data-likesum="'+data.like_sum+'">'+data.like_sum+'</a>');
-        }
-        else{
-         $(thisDiv).append('<p data-like="'+data.user_assign.likbtn+'" data-assign="'+data.user_assign.assignment_id+'">좋아요 취소</p>');
-         $(thisDiv).append('<a data-likesum="'+data.like_sum+'">'+data.like_sum+'</a>');
-        }
-      },
-      error: function(){
-        alert("error");
-      }
-    });
+  var thisDiv = this;
+  $.ajax({
+  url: '/assignment/like_btn',
+  dataType: 'json',
+  data: {
+  like: !$(this).find('p').data('like'),
+  assign_id: $(this).find('p').data('assign'),
+  like_sum: $(this).find('a').data('sum')
+  },
+  success: function(data){
+  $(thisDiv).empty();
+  if (!data.user_assign.likbtn){
+  $(thisDiv).append('<p data-like="'+data.user_assign.likbtn+'" data-assign="'+data.user_assign.assignment_id+'">좋아요</p>');
+  $(thisDiv).append('<a data-likesum="'+data.like_sum+'">'+data.like_sum+'</a>');
+  }
+  else{
+  $(thisDiv).append('<p data-like="'+data.user_assign.likbtn+'" data-assign="'+data.user_assign.assignment_id+'">좋아요 취소</p>');
+  $(thisDiv).append('<a data-likesum="'+data.like_sum+'">'+data.like_sum+'</a>');
+  }
+  },
+  error: function(){
+  alert("error");
+  }
   });
-});
+  });
+  });
 </script>
