@@ -358,6 +358,5 @@ button, input, optgroup, select, textarea{
 /*  name in card image */
 .card .card-image .card-title {
   padding:10px;
-  right: 0;
-  backgroundp-color:#000;
+  background-color:#000;
 }
