@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'lecture/lecture'
+
   get 'ajax/upanel'
 
   get 'admin/index'
