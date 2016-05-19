@@ -7,6 +7,8 @@ class User < ActiveRecord::Base
   has_many :user_teams
   has_many :teams, through: :user_teams
 
+  has_many :ideas
+
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
