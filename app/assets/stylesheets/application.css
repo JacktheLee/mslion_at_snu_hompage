@@ -377,3 +377,20 @@ button, input, optgroup, select, textarea{
   margin : 2rem;
   display : inline-block;
 }
+
+#like_button {
+  color: #190171;
+}
+
+#assignment_description {
+  display: table;
+}
+
+.likebtn {
+  display: table-row;
+}
+
+#like_sum {
+  display: table-cell;
+  color:#190171;
+}

@@ -1,28 +1,28 @@
 <div class="container" style="width: 75%">
   <div class="row">
     <h1> 아이디어 업로드</h1>
-    <%= form_tag "/assignment/upload_proc", class: "col s12", multipart: true do %>
+    <%= form_tag "/idea/upload_proc", class: "col s12", multipart: true do %>
       <div class="row">
         <div class="input-field col s12">
-          <input id="idea_title" name="idea_title" type="text" class="validate">
+          <input id="idea_title" name="idea_title" type="text">
           <label for="idea_title" style="font-size:150%;">아이디어 제목</label>
         </div>
       </div>
       <div class="row">
         <div class="col s12 file-field input-field">
           <div class="btn">
-            <span>File</span>
-            <input type="file" accept="image/*" name="img">
+            <span>기획안</span>
+            <input type="file" accept="application/vnd.ms-powerpoint, application/pdf, image/*" name="file">
           </div>
           <div class="file-path-wrapper">
-            <input class="file-path validate" type="text">
+            <input id="files" class="file-path validate" type="text" placeholder="이미지, PDF">
           </div>
         </div>
       </div>
       <div class="row">
         <div class="input-field col s12">
           <input id="git_url" type="url" class="validate" name="git_url" style="font-size:150%;">
-          <label for="git_url" style="font-size:150%;">URL(Proto-type)</label>
+          <label for="git_url" style="font-size:150%;">프로토타입 URL</label>
         </div>
       </div>
       <div class="row">

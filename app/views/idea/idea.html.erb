@@ -1,29 +1,39 @@
 <div class="container">
-    <h1>아이디어</h1>
-    <div class="row">
-      <div class="col s12" id="idea_upload_btn">
-        <a style="color:#fff;"href="/idea/upload"> 아이디어 업로드 </a>
-      </div>
+  <h1>아이디어</h1>
+  <div class="row">
+    <div class="col s12">
+      <a style="color:#fff; width:100%;" class="btn" href="/idea/upload"> 아이디어 업로드 </a>
     </div>
-    <div class="row">
-        <div class="col s12 m6">
-            <div class="card">
-                <div class="card-image waves-effect waves-block waves-light">
-                  <img class="activator" src="<%= asset_path('history1.png')%>">
-                </div>
-                <div class="card-content">
-                  <span class="card-title activator grey-text text-darken-4">아이디어 제목 (작성자)</span>
-                </div>
-                <div class="card-reveal">
-                  <span class="card-title grey-text text-darken-4">아이디어 제목<i class="material-icons right">close</i></span>
-                  <p>아이디어 자세한 내용</p>
-                  <div class="fixed-action-btn" style="bottom: 0.3rem; right: 0.5rem;">
-                    <a class="idea_button">
-                      <i class="medium material-icons">label</i>
-                    </a>
-                  </div>
-                </div>
-            </div>
+  </div>
+  <div class="row">
+    <% Idea.all.each do |i| %>
+      <div class="col s12 m6">
+        <div class="card">
+          <div class="card-image waves-effect waves-block waves-light">
+            <% if i.draft.url[-4..-1]=='.pdf' or i.draft.url[-4..-1] == '.ppt' or i.draft.url[-5..-1] == '.pptx' %>
+              <img class="activator" src="<%=asset_path('clogo_blue_2.png')%>">
+            <% else %>
+              <img class="activator" src="<%= asset_path(i.draft)%>">
+            <% end %>
+          </div>
+          <div class="card-content">
+            <span class="card-title activator grey-text text-darken-4" style="font-weight: bold;"><%= i.title%></span>
+            <br><br>
+            <a class="btn" style="width:100%;margin:0.1rem;" href="<%=i.url%>">프로토타입 보러가기</a>
+            <br>
+            <a class="btn" style="width:100%;margin:0.1rem" href="<%=i.draft%>">  기획안보기 </a>
+          </div>
+          <div class="card-reveal">
+            <span class="card-title grey-text text-darken-4" style="font-weight: bold;"><%=i.title%><i class="material-icons right">close</i></span>
+            <h5 style="font-size:1.4rem; color:#9e9e9e; font-weight:bold;"> <%= i.user.name %> </h5>
+            <p><%=i.description%></p>
+            <br><br>
+            <a class="btn" style="width:100%;margin:0.1rem;" href="<%=i.url%>">프로토타입 보러가기</a>
+            <br>
+            <a class="btn" style="width:100%;margin:0.1rem" href="<%=i.draft%>">  기획안보기 </a>
+          </div>
         </div>
-    </div>    
+      </div>
+    <% end %>
+  </div>
 </div>
