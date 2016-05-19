@@ -100,8 +100,8 @@
   $('#column').append('<div class="card" id="assignment_board"><div class="card-image">'+'<a href="'+data.img[i]+
         '" class="fancybox"><img src="'+data.img[i]+
         '"></a>'+'<span class="card-title">'+data.user[i].name+'</span></div>'+
-    '<div class="card-content"><p>'+data.assign[i].comment+'</p></div><div class="card-action">'+
-      '<a style="font-size:50%" display:table-row; color:#190171;"href="'+ data.assign[i].git_url+'">'+data.assign[i].git_url+
+    '<div class="card-content"><p>'+data.assign[i].comment+'</p></div><div class="card-action" id="assignment_description">'+
+      '<a style="font-size:50%;display:table-row; color:#190171;"href="'+ data.assign[i].git_url+'">'+data.assign[i].git_url+
         '</a><br><a class="btn" style="display:table-row;" href="/assignment/assign_delete?value='+
         data.assign[i].id+'&title='+data.assign[i].title+
         '">삭제</a> <div class="likebtn"><p data-like='+
@@ -112,8 +112,8 @@
   $('#column').append('<div class="card" id="assignment_board"><div class="card-image">'+'<a href="'+data.img[i]+
         '" class="fancybox"><img src="'+data.img[i]+
         '"></a>'+'<span class="card-title">'+data.user[i].name+'</span></div>'+
-    '<div class="card-content"><p>'+data.assign[i].comment+'</p></div><div class="card-action">'+
-      '<a style="font-size:50%" display:table-row; color:#190171;"href="'+ data.assign[i].git_url+'">'+data.assign[i].git_url+
+    '<div class="card-content"><p>'+data.assign[i].comment+'</p></div><div class="card-action" id="assginment_description">'+
+      '<a style="font-size:50%; display:table-row; color:#190171;"href="'+ data.assign[i].git_url+'">'+data.assign[i].git_url+
         '</a><br><a class="btn" style="display:table-row;" href="/assignment/assign_delete?value='+
         data.assign[i].id+'&title='+data.assign[i].title+
         '">삭제</a> <div class="likebtn"><p data-like='+
