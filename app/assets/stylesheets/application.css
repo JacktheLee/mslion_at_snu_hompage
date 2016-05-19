@@ -214,7 +214,15 @@ button, input, optgroup, select, textarea{
 	margin: 50px auto;
 }
 
-#columns {
+#column {
+   -webkit-column-count: 3; /* Chrome, Safari, Opera */
+   -moz-column-count: 3; /* Firefox */
+   break-before: column;
+   column-count: 3;
+   -webkit-column-break-before: always;
+   break-before: column;
+   -webkit-column-break-inside: avoid;
+   break-inside: avoid;
 }
 
 .pin {
@@ -359,4 +367,13 @@ button, input, optgroup, select, textarea{
 .card .card-image .card-title {
   padding:10px;
   background-color:#000;
+}
+
+#assignment_board {
+	-webkit-column-break-inside: avoid;
+	-moz-column-break-inside: avoid;
+	break-inside: avoid;
+  -webkit-column-break-inside: avoid;
+  margin : 2rem;
+  display : inline-block;
 }
