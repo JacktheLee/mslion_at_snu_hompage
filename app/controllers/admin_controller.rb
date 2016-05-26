@@ -21,10 +21,12 @@ class AdminController < ApplicationController
 
   def team_lotto_proc
     teams = Snulion.make_team(4)
+    team_leaders = ["임정건","이현민","유진영","서동욱"]
     week = params[:week].to_i
     Team.where(week: week).map { |item| item.destroy }
     teams.each_with_index do |item, i|
       team = Team.create(team_number: i, week: week)
+      team.users << User.where(name: team_leaders[i]).take
       item.each do |name|
         team.users << User.where(name: name).take
       end
