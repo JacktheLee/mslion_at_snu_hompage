@@ -31,6 +31,11 @@ class AdminController < ApplicationController
         team.users << User.where(name: name).take
       end
     end
+	team_leaders.each_with_index do |l,i|
+	  teams[i].reverse!
+	  teams[i] << l
+	  teams[i].reverse!
+	end
     respond_to do |format|
       format.json { render json: {teams: teams}}
     end

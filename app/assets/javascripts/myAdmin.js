@@ -44,14 +44,22 @@ $.show_result = function(team_index, data, roulette) {
 
 $.show_within_team = function(i, list) {
   setTimeout(function(){
-    if (i < list.length) {
+//	if (i == 0) {
+//      $('#roulette').hide();
+//      $('#picked').show();
+//      $('#picked').text(list[0]);
+//      $('#picked').toggle( "bounce", { times: 3 }, "slow" );
+//      $('#picked').toggle( "bounce", { times: 3 }, "fast" );
+//      $('#'+list[i]).toggle("fade");
+//	}
+	if (i < list.length) {
       $('#roulette').hide();
       $('#picked').show();
       $('#picked').text(list[i]);
       $('#picked').toggle( "bounce", { times: 3 }, "slow" );
       $('#picked').toggle( "bounce", { times: 3 }, "fast" );
       $('#'+list[i]).toggle("fade");
-      $.show_within_team(i+1, list, roulette);
+      $.show_within_team(i + 1, list, roulette);
     }
   }, 1500);
 }
