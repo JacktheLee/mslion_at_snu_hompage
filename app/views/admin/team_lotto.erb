@@ -6,7 +6,7 @@
     </div>
     <div class="col s12 center">
       <div id="count_down" style="display: none;">
-        <h1 id="count_num">3</h1>
+        <h1 id="count_num">5</h1>
       </div>
       <div class="container" id="team_list" style="display: none;">
         <div id="list_body">
@@ -34,8 +34,8 @@ $(document).ready(function(){
       success: function(data){
         $('#team_list').hide();
         $('#count_down').show();
-        $('#count_num').text(3);
-        $.count_down(3, data);
+        $('#count_num').text(1);
+        $.count_down(1, data);
       },
       error: function(){
         alert('으아니 에러라니!');

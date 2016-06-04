@@ -21,3 +21,5 @@
 
 # Ignore schema
 /db/schema.rb
+
+/public/*
