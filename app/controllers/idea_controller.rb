@@ -1,4 +1,5 @@
 class IdeaController < ApplicationController
+  before_action :authenticate_user!
   def idea
   end
   def description
